@@ -15,6 +15,7 @@ add_executable(EuclidSearchApp EuclidSearchMain.cpp)
 add_executable(EditDistSearchApp EditDistSearchMain.cpp)
 add_executable(ExtractFastaApp ExtractFasta.cpp)
 add_executable(InDimCalculatorApp InDimCalculator.cpp)
+add_executable(HMApp HMMain.cpp)
 
 target_link_libraries(InDimCalculatorApp libCommon)
 target_link_libraries(InDimCalculatorApp libMetric)
@@ -37,4 +38,8 @@ target_link_libraries(EditDistSearchApp libMetric)
 target_link_libraries(EditDistSearchApp libSearch)
 target_link_libraries(EditDistSearchApp edlib)
 
+target_link_libraries(HMApp  libCommon)
+target_link_libraries(HMApp libMetric)
+target_link_libraries(HMApp libSearch)
+target_link_libraries(HMApp edlib)
 

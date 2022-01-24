@@ -1,0 +1,8 @@
+;;TEST COLLECTION: Wed Jan 19 05:45:44 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+sname,MADI,dim,dbSize,collection,nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
+CMT,1,10,10000,F,100,0,54,0.54,17618.8,RAN,BOM,22.46,11.73,226,0,0
+CMT,1,10,10000,T,100,0,54,0.54,17618.8,RAN,BOM,22.46,11.73,226,0,0
+CMT,1,10,10000,F,100,2.56109,54258,542.58,17618.8,RAN,BOM,9407.27,9046.14,226,569,5690
+CMT,1,10,10000,T,100,2.56109,54258,542.58,17618.8,RAN,BOM,9406.27,9044.76,226,591,5910

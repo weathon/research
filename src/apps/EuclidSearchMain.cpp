@@ -21,7 +21,7 @@ int main(int argc, char* argv[]) {
 
 	/*  EUCLIDIAN METRIC TESTS */
 	
-	//radiusSearchTestEM(fileNamePrefix);
+	radiusSearchTestEM(fileNamePrefix);
 	//radiusSearchTestEM_S(fileNamePrefix);
 
 	//the count-only version of radius search
@@ -46,7 +46,7 @@ int main(int argc, char* argv[]) {
 	//--------------------------------------------------------
 	//collectSearchTestEM(fileNamePrefix + "_pf");
 	//collectSearchTestEMAutoRad(fileNamePrefix + "_DIM10b_zoom", 30, 0.3);
-	collectSearchTestEMAutoRad(fileNamePrefix + "_DIM10b", 10, 0.9);
+	// collectSearchTestEMAutoRad(fileNamePrefix + "_DIM10b", 10, 0.9);
 	
 	//collectCountSearchTestEM(fileNamePrefix);
 	//collectCountSearchPlusTestEM(fileNamePrefix + "_2parts");

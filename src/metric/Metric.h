@@ -4,6 +4,7 @@
 #include <ostream>
 #include <cstdlib>
 #include <cmath>
+#include <string>
 
 #include "Sequence.h"
 #include "ParasailInterface.h"
@@ -11,6 +12,7 @@
 #include "Misc.h"
 #include "EditDistance.h"
 #include "edlib.h"
+#include "HMPoint.h"
 
 
 template <class T>
@@ -69,5 +71,18 @@ public:
 	}
 };
 
+class HMMetric : public  Metric<std::HMPoint> {
+public:
+	double distance(const std::HMPoint& p1, const std::HMPoint& p2) {
+		return p1.distance(p2);
+	}
+	double distance(const std::HMPoint* p1, const std::HMPoint* p2) {
+		return distance(*p1, *p2);
+	}
+	friend std::ostream & operator <<(std::ostream & os, EditDistMetric  mp) {
+		os << typeid(mp).name() << ", ";
+		return os;
+	}
+};
 
 #endif

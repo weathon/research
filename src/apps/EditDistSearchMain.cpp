@@ -18,7 +18,7 @@ std::vector< DistanceIntervalSM<float>> DistanceIntervalSM<float>::data;
 int main(int argc, char* argv[]) {
 	using namespace std;
 
-	string bfn {"/home/mzuniga/data"};
+	string bfn {"/home/wg25r/data"};
 	string fileNamePrefix = { "mtreeRunTimes_EDM" };
 	string cmFileName{ "checkMetrics.txt" };
 	string sweFileName{ "SWExamples.txt" };

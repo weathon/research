@@ -403,13 +403,13 @@ void nkSearchTestEDM_EXQ_NP(const std::string& fileNamePrefix, std::vector<Seque
 			for (const auto& partType : includePartTypes) {
 				for (const auto& madi : cmt_madis){
 					nkSearchTest<Sequence, EditDistMetric,CMTree<Sequence, EditDistMetric>>
-					(dWords, qSeqs, radii, aveWordLength, maxResults, pivType, partType, madi, fileNamePrefix, hflag);
+					(dWords, qSeqs, radii, aveWordLength, maxResults, pivType, partType, madi, "", hflag);
 					if (hflag == true) { hflag = false; }
 				}
 				
 				for (const auto& madi : spmt_madis){
 					nkSearchTest<Sequence, EditDistMetric,SPMTree<Sequence, EditDistMetric>>
-					(dWords, qSeqs, radii, aveWordLength, maxResults, pivType, partType, madi, fileNamePrefix, hflag);
+					(dWords, qSeqs, radii, aveWordLength, maxResults, pivType, partType, madi, "", hflag);
 					if (hflag == true) { hflag = false; }
 				}
 			}

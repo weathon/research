@@ -176,21 +176,23 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 	//std::vector<float> lcmt_npivs {0.25, 0.5, 1.0, 2.0, 3.0 };
 	//std::vector<int> cmt_madis {1000, 1};
 
-	std::vector<float> lcmt_npivs ;
+	// std::vector<float> lcmt_npivs ;
 	std::vector<int> cmt_madis {1000};
 
 	std::set<PivotType> includePivotTypes{ PivotType::RAN};
 	std::set<PartType>  includePartTypes{ PartType::BOM};
+
 	bool hflag = true;
 	std::vector<EuclidianPoint> points, qPoints;
 	for (const auto& [np, nQueries] : nofPoints) {
-		auto [points, qPoints] = generatePointsQD(np, nQueries);
+		auto [points, qPoints] = generatePointsQD(np, nQueries); 
 		//auto [points, qPoints] = generatePointsQDClustered(nClusters ,nPointsPer, nQueries);
 		for (const auto& pivType  : includePivotTypes) {
 			for (const auto& partType : includePartTypes) {
 				for (const auto& madi : cmt_madis){
 					radiusSearchTest<EuclidianPoint, EuclidianMetric,CMTree<EuclidianPoint, EuclidianMetric>>
 					(points, qPoints, EuclidianPointDim, radii, pivType, partType, madi, fileNamePrefix, hflag);
+					//fileNamePrefix -> output file
 					hflag = false; //Dont print header after 1st time.
 				}
 			}
@@ -545,7 +547,7 @@ void collectSearchTestEMAutoRad(const std::string& fileNamePrefix, int nrad, flo
 	bool hflag = true;
 	std::vector<EuclidianPoint> points, qPoints;
 	for (const auto& [np, nQueries] : nofPoints) {
-		auto [points, qPoints] = generatePointsQD(np, nQueries);
+		auto [points, qPoints] = generatePointsQD(np, nQueries); // Data gen
 		std::array<EuclidianPointPointType, EuclidianPointDim> boxO,boxP;
 		getDataBounds(points, boxO, boxP);
 		EuclidianPoint pO("0", boxO);
@@ -566,6 +568,7 @@ void collectSearchTestEMAutoRad(const std::string& fileNamePrefix, int nrad, flo
 				for (const auto& madi : cmt_madis){
 					collectSearchTest<EuclidianPoint, EuclidianMetric,CMTree<EuclidianPoint, EuclidianMetric>>
 					(points, qPoints, EuclidianPointDim, radii, false, pivType, partType, madi, fileNamePrefix, hflag, rangeSearchToo);
+					// 
 					if (hflag == true) {hflag = false;}
 				}
 				for (const auto& madi : spmt_madis){
