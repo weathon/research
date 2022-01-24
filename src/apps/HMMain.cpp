@@ -17,5 +17,5 @@ std::vector< DistanceIntervalSM<float>> DistanceIntervalSM<float>::data;
 
 int main(int argc, char* argv[]) {
     using namespace std;
-    collectSearchTestEMAutoRad("",10,0.9);
+    radiusSearchTestEM("HM_");
 }

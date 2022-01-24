@@ -26,15 +26,17 @@ public:
 
 	double distance(const EuclidianPointG& p) const {
 		int ans = 0;
-		for(int i=0; i<p1.length(); i++)
+		for(int i=0; i<p.length(); i++)
 		{
-			if(p1[i] != p2[i])
+			if(p[i] != point[i])
 			{
 				ans++;
 			}
 		}
 		return ans;
 	}
+
+    //??? DIM = String Length?
 	bool isInsideBox(std::array<PT, DIM> const& o, std::array<PT, DIM>  const& p) {
 		for (int i = 0; i < DIM; i++) {
 			if ((point[i] < o[i]) || (point[i] > p[i])) {
@@ -43,6 +45,7 @@ public:
 		}
 		return true;
 	}
+
 	friend std::ostream& operator<<(std::ostream& os, EuclidianPointG& n) {
 		os << "(" << n.id << ":<";
 		os << n.point[0];
@@ -54,8 +57,9 @@ public:
 	}
 };
 static const unsigned int EuclidianPointDim = 10;
-using EuclidianPointPointType = float;
-using EuclidianPoint = EuclidianPointG<EuclidianPointPointType, EuclidianPointDim>;
+
+// using EuclidianPointPointType = float;
+// using EuclidianPoint = EuclidianPointG<EuclidianPointPointType, EuclidianPointDim>;
 
 
 #endif // !EUCLIDIAN_POINT_H
