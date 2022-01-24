@@ -1,0 +1,5 @@
+;;TEST RADIUS: Mon Jan 24 23:21:10 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj10EE8HMMetricE],[8HMMetric, ]
+sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
+CMT,10,10,200,F,200,1,40000,200,0,RAN,BOM,200,200,4,35,175

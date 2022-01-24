@@ -79,10 +79,10 @@ public:
 	double distance(const HMPoint* p1, const HMPoint* p2) {
 		return distance(*p1, *p2);
 	}
-	// friend std::ostream & operator <<(std::ostream & os, HMPoint  mp) {
-	// 	os << typeid(mp).name() << ", ";
-	// 	return os;
-	// }
+	friend std::ostream & operator <<(std::ostream & os, HMMetric  mp) {
+		os << typeid(mp).name() << ", ";
+		return os;
+	}
 };
 
 #endif

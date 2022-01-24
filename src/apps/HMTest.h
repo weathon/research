@@ -47,11 +47,12 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		char myStr[dim];
 		for(int i=0; i<nPoints; i++)
 		{
-			for(int j=0; j<dim; j++)
-			{
-				myStr[i] = rand()%(90-65)+65;
-			}
-			string s = myStr;
+			// for(int j=0; j<dim; j++)
+			// {
+			// 	myStr[i] = rand()%(90-65)+65;
+			// }
+			// string s = myStr;
+			string s = "aaaaaaaaaa";
 			HMPoint* word = new HMPoint(s, s);
 			words.push_back(*word);
 			qWords.push_back(*word);
@@ -64,7 +65,7 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 	//Set the DB sizes and number of queries that we want to test
 	//std::map<unsigned int, unsigned int> nofPoints = getTestSizes(2, 10,18,1, 10000) ;
 	//std::map<unsigned int, unsigned int> nofPoints{ {1000,100}, {10000,1000 } ,{100000,1000 } ,{1000000,1000 } };
-	std::map<unsigned int, unsigned int> nofPoints{  {10000,1000 }  };
+	std::map<unsigned int, unsigned int> nofPoints{  {200,10 }  };
 
 	//std::vector<float> radii {0.5f, 1.0f, 1.5f, 2.0f, 2.5f, 3.0f};
 	std::vector<float> radii {1.0f};
@@ -73,7 +74,7 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 	//std::vector<int> cmt_madis {1000, 1};
 
 	// std::vector<float> lcmt_npivs ;
-	std::vector<int> cmt_madis {1000};
+	std::vector<int> cmt_madis {10};
 
 	std::set<PivotType> includePivotTypes{ PivotType::RAN};
 	std::set<PartType>  includePartTypes{ PartType::BOM};
@@ -87,7 +88,7 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 			for (const auto& partType : includePartTypes) {
 				for (const auto& madi : cmt_madis){
 					radiusSearchTest<HMPoint, HMMetric,CMTree<HMPoint, HMMetric>>
-					(points, qPoints, 100, radii, pivType, partType, madi, fileNamePrefix, hflag);
+					(points, qPoints, 10, radii, pivType, partType, madi, fileNamePrefix, hflag);
 					//fileNamePrefix -> output file
 					hflag = false; //Dont print header after 1st time.
 				}

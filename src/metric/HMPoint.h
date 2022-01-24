@@ -59,7 +59,7 @@ public:
 // static const unsigned int EuclidianPointDim = 10;
 
 // using EuclidianPointPointType = float;
-using HMPoint = HMPointG<100>;
+using HMPoint = HMPointG<10>;
 
 
 // #endif // !EUCLIDIAN_POINT_H
