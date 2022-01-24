@@ -26,9 +26,9 @@ public:
 
 	double distance(const HMPointG& p) const {
 		int ans = 0;
-		for(int i=0; i<p.length(); i++)
+		for(int i=0; i<p.point.length(); i++)
 		{
-			if(p[i] != point[i])
+			if(p.point[i] != p.point[i])
 			{
 				ans++;
 			}

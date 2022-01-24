@@ -67,15 +67,15 @@ public:
 	friend std::ostream & operator <<(std::ostream & os, EditDistMetric  mp) {
 		os << typeid(mp).name() << ", ";
 		return os;
-	}
+	// }
 };
 
 class HMMetric : public  Metric<HMPoint> {
 public:
-	double distance(const std::HMPoint& p1, const std::HMPoint& p2) {
+	double distance(const HMPoint& p1, const HMPoint& p2) {
 		return p1.distance(p2);
 	}
-	double distance(const std::HMPoint* p1, const std::HMPoint* p2) {
+	double distance(const HMPoint* p1, const HMPoint* p2) {
 		return distance(*p1, *p2);
 	}
 	friend std::ostream & operator <<(std::ostream & os, EditDistMetric  mp) {

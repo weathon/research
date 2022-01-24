@@ -36,10 +36,10 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		using namespace std;
 		constexpr unsigned int dim = 100; //string length
 		
-		std::vector<string> words;
+		std::vector<HMPoint> words;
 		words.reserve(nPoints); //For vector
 
-		std::vector<string> qWords;
+		std::vector<HMPoint> qWords;
 		qWords.reserve(nPoints); //For vector
 		int nQCount = 0;
 		// 65-90
@@ -52,8 +52,9 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 				myStr[i] = rand()%(90-65)+65;
 			}
 			string s = myStr;
-			words.push_back(s);
-			qWords.push_back(s);
+			HMPoint* word = new HMPoint(s, s);
+			words.push_back(*word);
+			qWords.push_back(*word);
 		}
 		return { words, qWords };
 }
@@ -85,8 +86,8 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 		for (const auto& pivType  : includePivotTypes) {
 			for (const auto& partType : includePartTypes) {
 				for (const auto& madi : cmt_madis){
-					radiusSearchTest<EuclidianPoint, EuclidianMetric,CMTree<EuclidianPoint, EuclidianMetric>>
-					(points, qPoints, EuclidianPointDim, radii, pivType, partType, madi, fileNamePrefix, hflag);
+					radiusSearchTest<HMPoint, HMMetric,CMTree<HMPoint, HMMetric>>
+					(points, qPoints, 100, radii, pivType, partType, madi, fileNamePrefix, hflag);
 					//fileNamePrefix -> output file
 					hflag = false; //Dont print header after 1st time.
 				}
