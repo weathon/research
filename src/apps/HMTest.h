@@ -47,12 +47,12 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		char myStr[dim];
 		for(int i=0; i<nPoints; i++)
 		{
-			// for(int j=0; j<dim; j++)
-			// {
-			// 	myStr[i] = rand()%(90-65)+65;
-			// }
-			// string s = myStr;
-			string s = "aaaaaaaaaa";
+			for(int j=0; j<dim; j++)
+			{
+				myStr[j] = rand()%(90-65)+65;
+			}
+			string s = myStr;
+			// string s = "aaaaaa";
 			HMPoint* word = new HMPoint(s, s);
 			words.push_back(*word);
 			qWords.push_back(*word);
