@@ -6,6 +6,7 @@ apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: apps/Reader.h
 apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: common/Misc.h
 apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: metric/EditDistance.h
 apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: metric/EuclidianPoint.h
+apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: metric/HMPoint.h
 apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: metric/Metric.h
 apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: metric/ParasailInterface.h
 apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o: metric/Sequence.h

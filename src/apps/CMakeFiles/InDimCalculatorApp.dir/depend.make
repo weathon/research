@@ -7,6 +7,7 @@ apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: apps/Reader.h
 apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: common/Misc.h
 apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: metric/EditDistance.h
 apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: metric/EuclidianPoint.h
+apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: metric/HMPoint.h
 apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: metric/Metric.h
 apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: metric/ParasailInterface.h
 apps/CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o: metric/Sequence.h

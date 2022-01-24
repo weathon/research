@@ -9,6 +9,7 @@ apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: apps/TestCommon.
 apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: common/Misc.h
 apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: metric/EditDistance.h
 apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: metric/EuclidianPoint.h
+apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: metric/HMPoint.h
 apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: metric/Metric.h
 apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: metric/ParasailInterface.h
 apps/CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o: metric/Sequence.h

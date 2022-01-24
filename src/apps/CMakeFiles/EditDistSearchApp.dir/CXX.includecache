@@ -186,6 +186,10 @@ metric/EuclidianPoint.h
 array
 -
 
+metric/HMPoint.h
+array
+-
+
 metric/Metric.h
 ostream
 -
@@ -207,6 +211,8 @@ EditDistance.h
 metric/EditDistance.h
 edlib.h
 metric/edlib.h
+HMPoint.h
+metric/HMPoint.h
 
 metric/ParasailInterface.h
 string

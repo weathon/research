@@ -7,6 +7,7 @@ apps/CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o
  common/Misc.h
  metric/EditDistance.h
  metric/EuclidianPoint.h
+ metric/HMPoint.h
  metric/Metric.h
  metric/ParasailInterface.h
  metric/Sequence.h

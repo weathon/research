@@ -7,6 +7,7 @@ apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: apps/TestCommon.h
 apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: common/Misc.h
 apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: metric/EditDistance.h
 apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: metric/EuclidianPoint.h
+apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: metric/HMPoint.h
 apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: metric/Metric.h
 apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: metric/ParasailInterface.h
 apps/CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o: metric/Sequence.h
