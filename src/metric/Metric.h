@@ -14,7 +14,6 @@
 #include "edlib.h"
 #include "HMPoint.h"
 
-
 template <class T>
 class Metric {
 public:
@@ -71,7 +70,7 @@ public:
 	}
 };
 
-class HMMetric : public  Metric<std::HMPoint> {
+class HMMetric : public  Metric<HMPoint> {
 public:
 	double distance(const std::HMPoint& p1, const std::HMPoint& p2) {
 		return p1.distance(p2);

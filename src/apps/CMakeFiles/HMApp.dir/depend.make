@@ -7,6 +7,7 @@ apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: apps/TestCommon.h
 apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: common/Misc.h
 apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: metric/EditDistance.h
 apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: metric/EuclidianPoint.h
+apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: metric/HMPoint.h
 apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: metric/Metric.h
 apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: metric/ParasailInterface.h
 apps/CMakeFiles/HMApp.dir/HMMain.cpp.o: metric/Sequence.h

@@ -1,5 +1,5 @@
-#ifndef EUCLIDIAN_POINT_H
-#define EUCLIDIAN_POINT_H
+// #ifndef EUCLIDIAN_POINT_H
+// #define EUCLIDIAN_POINT_H
 
 #include <array>
 
@@ -10,21 +10,21 @@
 */
 
 
-template <class PT, unsigned int DIM>
-class EuclidianPointG {
+template <unsigned int DIM>
+class HMPointG {
 private:
 	std::string point;
 	std::string id;
 public:
-	EuclidianPointG(const std::string ident, const std::string&  pData) : id{ ident } {
+	HMPointG(const std::string ident, const std::string&  pData) : id{ ident } {
 			point= pData;//defined in std to overrite every member
 	}
 	const std::string& getId() const { return id; }
 	const std::string& getValue() { return point; }
 	const unsigned int dim() { return DIM; }
-	PT operator[](const int i) const { return point[i]; }
+	char operator[](const int i) const { return point[i]; }
 
-	double distance(const EuclidianPointG& p) const {
+	double distance(const HMPointG& p) const {
 		int ans = 0;
 		for(int i=0; i<p.length(); i++)
 		{
@@ -37,16 +37,16 @@ public:
 	}
 
     //??? DIM = String Length?
-	bool isInsideBox(std::array<PT, DIM> const& o, std::array<PT, DIM>  const& p) {
-		for (int i = 0; i < DIM; i++) {
-			if ((point[i] < o[i]) || (point[i] > p[i])) {
-				return false;
-			}
-		}
-		return true;
-	}
+	// bool isInsideBox(std::array<DIM> const& o, std::array<DIM>  const& p) {
+	// 	for (int i = 0; i < DIM; i++) {
+	// 		if ((point[i] < o[i]) || (point[i] > p[i])) {
+	// 			return false;
+	// 		}
+	// 	}
+	// 	return true;
+	// }
 
-	friend std::ostream& operator<<(std::ostream& os, EuclidianPointG& n) {
+	friend std::ostream& operator<<(std::ostream& os, HMPointG& n) {
 		os << "(" << n.id << ":<";
 		os << n.point[0];
 		for (int i = 1; i < DIM; i++) {
@@ -56,10 +56,10 @@ public:
 		return os;
 	}
 };
-static const unsigned int EuclidianPointDim = 10;
+// static const unsigned int EuclidianPointDim = 10;
 
 // using EuclidianPointPointType = float;
-// using EuclidianPoint = EuclidianPointG<EuclidianPointPointType, EuclidianPointDim>;
+using HMPoint = HMPointG<100>;
 
 
-#endif // !EUCLIDIAN_POINT_H
+// #endif // !EUCLIDIAN_POINT_H

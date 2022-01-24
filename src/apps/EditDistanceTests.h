@@ -25,7 +25,7 @@
 
 auto generateWords(unsigned int nWords, unsigned int aveWordLength, unsigned int sigma) {
 	std::vector<Sequence> words;
-	words.reserve(nWords);
+	words.reserve(nWords); //For vector
 	std::ostringstream idStream;
 	//std::normal_distribution<float> dist(aveWordLength, sigma);
 	std::uniform_int_distribution<> dist(1, 2 * aveWordLength);

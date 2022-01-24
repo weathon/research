@@ -12,6 +12,7 @@
 #include <array>
 #include <string>
 #include <map>
+#include <stdlib.h>
 
 #include "Misc.h"
 #include "Query.h"
@@ -30,33 +31,31 @@ void HelloWorld()
     std::cout << "Hello World" << std::endl;
 }
 
-std::tuple<std::vector<HMPoint>, std::vector<HMPoint>>
-generatePointsQD(unsigned int nPoints, unsigned int nQueries, const double density = 1.0f) {
+std::tuple<std::vector<HMPoint>, std::vector<HMPoint>> //return value
+generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		using namespace std;
 		constexpr unsigned int dim = 100; //string length
-		auto width = ceil(pow((nPoints / density), 1.0 / dim));
-
-		std::array< EuclidianPointPointType, dim> boxO;
-		std::array< EuclidianPointPointType, dim> boxP;
-	
-		auto frac = 0.01;
 		
-		for (int i = 0; i < dim; i++) {
-			boxO[i] = 0.0f + width * frac;
-			boxP[i] = (1.0 - frac) * width ;
+		std::vector<string> words;
+		words.reserve(nPoints); //For vector
+
+		std::vector<string> qWords;
+		qWords.reserve(nPoints); //For vector
+		int nQCount = 0;
+		// 65-90
+
+		char myStr[dim];
+		for(int i=0; i<nPoints; i++)
+		{
+			for(int j=0; j<dim; j++)
+			{
+				myStr[i] = rand()%(90-65)+65;
+			}
+			string s = myStr;
+			words.push_back(s);
+			qWords.push_back(s);
 		}
-
-		std::clock_t start = std::clock();
-		std::vector<EuclidianPoint> dbPoints =
-			genEuclidianPointsUniform<dim, EuclidianPointPointType>(nPoints, 0.0f, width);
-		std::cout << "dataGenTime=" << dTimeSeconds(start) << std::endl;
-
-		//And the query points ...
-		auto qPoints = getInteriorPoints<float, dim>(dbPoints, boxO, boxP);
-		qPoints = getSubsetRandom(qPoints, nQueries);
-
-		//TODO: verify we dont need std::move usage.
-		return { dbPoints, qPoints };
+		return { words, qWords };
 }
 
 
