@@ -3,3 +3,8 @@
 ;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
 sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
 CMT,1000,10,10000,F,1000,1,1207,1.207,26290.9,RAN,BOM,1979.7,1201.37,321,1408,1408
+;;TEST RADIUS: Mon Jan 24 23:27:51 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
+CMT,1000,10,10000,F,1000,1,1207,1.207,26290.9,RAN,BOM,1979.7,1201.37,335,1367,1367

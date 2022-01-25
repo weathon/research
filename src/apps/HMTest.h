@@ -55,7 +55,10 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 			// string s = "aaaaaa";
 			HMPoint* word = new HMPoint(s, s);
 			words.push_back(*word);
-			qWords.push_back(*word);
+		}
+		for(int i=0; i<nQueries; i++)
+		{
+			qWords.push_back(words[rand()%nPoints]);
 		}
 		return { words, qWords };
 }
