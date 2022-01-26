@@ -23,7 +23,7 @@
 #include "BruteForceSearch.h"
 
 #include "TestCommon.h"
-
+#define DIM 50
 
 void HelloWorld()
 {
@@ -34,7 +34,7 @@ void HelloWorld()
 std::tuple<std::vector<HMPoint>, std::vector<HMPoint>> //return value
 generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		using namespace std;
-		constexpr unsigned int dim = 100; //string length
+		constexpr unsigned int dim = DIM; //string length
 		
 		std::vector<HMPoint> words;
 		words.reserve(nPoints); //For vector
@@ -55,11 +55,15 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 			// string s = "aaaaaa";
 			HMPoint* word = new HMPoint(s, s);
 			words.push_back(*word);
+			free(word);
+
 		}
-		int notInSet = rand()%(10*nPoints); // not 10 ()
+		int notInSet = rand()%(nPoints/50); // not 10 ()  not 10* xkoukun
+
 		for(int i=0; i<nQueries-notInSet; i++)
 		{
-			words.push_back(words[rand()%nPoints]);
+			// words.push_back(words[rand()%nPoints]);
+			qWords.push_back(words[rand()%nPoints]); // this should qwords why not before? guaibudehenduoreeixnyuneyuneixnkunsuan chubuliaoexinku
 			// qWords.push_back(words[rand()%nPoints]);
 		}
 		cout<<"notInSet: "<<notInSet<<endl;
@@ -73,6 +77,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 			// string s = "aaaaaa";
 			HMPoint* word = new HMPoint(s, s);
 			qWords.push_back(*word);
+			free(word);
 		}
 		return { words, qWords };
 }
@@ -82,20 +87,19 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 	//Set the DB sizes and number of queries that we want to test
 	//std::map<unsigned int, unsigned int> nofPoints = getTestSizes(2, 10,18,1, 10000) ;
 	//std::map<unsigned int, unsigned int> nofPoints{ {1000,100}, {10000,1000 } ,{100000,1000 } ,{1000000,1000 } };
-	std::map<unsigned int, unsigned int> nofPoints{  {200000,1000 }  };
-	int dim = 50;
+	std::map<unsigned int, unsigned int> nofPoints{  {20000,2000 }  };
+	int dim = DIM;
 	//std::vector<float> radii {0.5f, 1.0f, 1.5f, 2.0f, 2.5f, 3.0f};
-	std::vector<float> radii {1.0f, 2.0, 3.0, 4.0, 5.0};
+	std::vector<float> radii {1.0f, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0};
 
 	//std::vector<float> lcmt_npivs {0.25, 0.5, 1.0, 2.0, 3.0 };
 	//std::vector<int> cmt_madis {1000, 1};
 
 	// std::vector<float> lcmt_npivs ;
-	std::vector<int> cmt_madis {10, 100, 200, 300, 400, 500, 600, 700, 800, 900};
+	std::vector<int> cmt_madis {10, 100, 200, 300, 400, 500};
 
 	std::set<PivotType> includePivotTypes{ PivotType::RAN};
 	std::set<PartType>  includePartTypes{ PartType::BOM};
-
 	bool hflag = true;
 	std::vector<EuclidianPoint> points, qPoints;
 	for (const auto& [np, nQueries] : nofPoints) {
