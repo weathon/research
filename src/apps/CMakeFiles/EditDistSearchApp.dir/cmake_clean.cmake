@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/wg25r/CMT/bin/EditDistSearchApp"
-  "/home/wg25r/CMT/bin/EditDistSearchApp.pdb"
+  "/home/wg25r/research/bin/EditDistSearchApp"
+  "/home/wg25r/research/bin/EditDistSearchApp.pdb"
   "CMakeFiles/EditDistSearchApp.dir/EditDistSearchMain.cpp.o"
 )
 

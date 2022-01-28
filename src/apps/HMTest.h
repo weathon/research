@@ -65,7 +65,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 
 		}
 		// int notInSet = nPoints; //rand()%(nPoints/50); // not 10 ()  not 10* xkoukun
-		int notInSet = rand()%(nPoints/50); // not 10 ()  not 10* xkoukun
+		int notInSet = rand()%(nQueries/50); // not 10 ()  not 10* xkoukun
 		cout<<"-----------"<<endl;
 		for(int i=0; i<nQueries-notInSet; i++)
 		{
@@ -204,7 +204,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
-	std::map<unsigned int, unsigned int> nofPoints{  {100000, 1000} };
+	std::map<unsigned int, unsigned int> nofPoints{  {800000, 1000} };
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		for (const auto& [pivType, pivVal] : pivotTypeMap) {

@@ -4,7 +4,7 @@ if("${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION}" LESS 2.5)
    message(FATAL_ERROR "CMake >= 2.6.0 required")
 endif()
 cmake_policy(PUSH)
-cmake_policy(VERSION 2.6...3.17)
+cmake_policy(VERSION 2.6)
 #----------------------------------------------------------------
 # Generated CMake target import file.
 #----------------------------------------------------------------
@@ -45,14 +45,14 @@ unset(_expectedTargets)
 add_library(edlib::edlib STATIC IMPORTED)
 
 set_target_properties(edlib::edlib PROPERTIES
-  INTERFACE_INCLUDE_DIRECTORIES "/home/wg25r/CMT/src/vendor/edlib/edlib/include"
+  INTERFACE_INCLUDE_DIRECTORIES "/home/wg25r/research/src/vendor/edlib/edlib/include"
 )
 
 # Import target "edlib::edlib" for configuration ""
 set_property(TARGET edlib::edlib APPEND PROPERTY IMPORTED_CONFIGURATIONS NOCONFIG)
 set_target_properties(edlib::edlib PROPERTIES
   IMPORTED_LINK_INTERFACE_LANGUAGES_NOCONFIG "CXX"
-  IMPORTED_LOCATION_NOCONFIG "/home/wg25r/CMT/src/lib/libedlib.a"
+  IMPORTED_LOCATION_NOCONFIG "/home/wg25r/research/src/lib/libedlib.a"
   )
 
 # This file does not depend on other imported targets which have

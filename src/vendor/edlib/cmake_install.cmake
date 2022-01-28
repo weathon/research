@@ -1,4 +1,4 @@
-# Install script for directory: /home/wg25r/CMT/src/vendor/edlib
+# Install script for directory: /home/wg25r/research/src/vendor/edlib
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -29,7 +29,7 @@ endif()
 
 # Install shared libraries without execute permission?
 if(NOT DEFINED CMAKE_INSTALL_SO_NO_EXE)
-  set(CMAKE_INSTALL_SO_NO_EXE "0")
+  set(CMAKE_INSTALL_SO_NO_EXE "1")
 endif()
 
 # Is this installation the result of a crosscompile?
@@ -37,46 +37,41 @@ if(NOT DEFINED CMAKE_CROSSCOMPILING)
   set(CMAKE_CROSSCOMPILING "FALSE")
 endif()
 
-# Set default install directory permissions.
-if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "/usr/bin/objdump")
+if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig" TYPE FILE FILES "/home/wg25r/research/src/vendor/edlib/edlib-1.pc")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/pkgconfig" TYPE FILE FILES "/home/wg25r/CMT/src/vendor/edlib/edlib-1.pc")
-endif()
-
-if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/edlib" TYPE FILE FILES
-    "/home/wg25r/CMT/src/vendor/edlib/edlib-config.cmake"
-    "/home/wg25r/CMT/src/vendor/edlib/edlib-config-version.cmake"
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/edlib" TYPE FILE FILES
+    "/home/wg25r/research/src/vendor/edlib/edlib-config.cmake"
+    "/home/wg25r/research/src/vendor/edlib/edlib-config-version.cmake"
     )
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/edlib/edlib-targets.cmake")
+  if(EXISTS "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/edlib/edlib-targets.cmake")
     file(DIFFERENT EXPORT_FILE_CHANGED FILES
-         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/edlib/edlib-targets.cmake"
-         "/home/wg25r/CMT/src/vendor/edlib/CMakeFiles/Export/lib64/cmake/edlib/edlib-targets.cmake")
+         "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/edlib/edlib-targets.cmake"
+         "/home/wg25r/research/src/vendor/edlib/CMakeFiles/Export/lib/cmake/edlib/edlib-targets.cmake")
     if(EXPORT_FILE_CHANGED)
-      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/edlib/edlib-targets-*.cmake")
+      file(GLOB OLD_CONFIG_FILES "$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/edlib/edlib-targets-*.cmake")
       if(OLD_CONFIG_FILES)
-        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib64/cmake/edlib/edlib-targets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
+        message(STATUS "Old export file \"$ENV{DESTDIR}${CMAKE_INSTALL_PREFIX}/lib/cmake/edlib/edlib-targets.cmake\" will be replaced.  Removing files [${OLD_CONFIG_FILES}].")
         file(REMOVE ${OLD_CONFIG_FILES})
       endif()
     endif()
   endif()
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/edlib" TYPE FILE FILES "/home/wg25r/CMT/src/vendor/edlib/CMakeFiles/Export/lib64/cmake/edlib/edlib-targets.cmake")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/edlib" TYPE FILE FILES "/home/wg25r/research/src/vendor/edlib/CMakeFiles/Export/lib/cmake/edlib/edlib-targets.cmake")
   if("${CMAKE_INSTALL_CONFIG_NAME}" MATCHES "^()$")
-    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64/cmake/edlib" TYPE FILE FILES "/home/wg25r/CMT/src/vendor/edlib/CMakeFiles/Export/lib64/cmake/edlib/edlib-targets-noconfig.cmake")
+    file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/cmake/edlib" TYPE FILE FILES "/home/wg25r/research/src/vendor/edlib/CMakeFiles/Export/lib/cmake/edlib/edlib-targets-noconfig.cmake")
   endif()
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib64" TYPE STATIC_LIBRARY FILES "/home/wg25r/CMT/src/lib/libedlib.a")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/lib" TYPE STATIC_LIBRARY FILES "/home/wg25r/research/src/lib/libedlib.a")
 endif()
 
 if("x${CMAKE_INSTALL_COMPONENT}x" STREQUAL "xUnspecifiedx" OR NOT CMAKE_INSTALL_COMPONENT)
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/wg25r/CMT/src/vendor/edlib/edlib/include/edlib.h")
+  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/include" TYPE FILE FILES "/home/wg25r/research/src/vendor/edlib/edlib/include/edlib.h")
 endif()
 

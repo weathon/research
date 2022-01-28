@@ -6,9 +6,9 @@
 
 #IncludeRegexTransform: 
 
-/home/wg25r/CMT/src/vendor/edlib/edlib/src/edlib.cpp
+/home/wg25r/research/src/vendor/edlib/edlib/src/edlib.cpp
 edlib.h
-/home/wg25r/CMT/src/vendor/edlib/edlib/src/edlib.h
+/home/wg25r/research/src/vendor/edlib/edlib/src/edlib.h
 stdint.h
 -
 cstdlib

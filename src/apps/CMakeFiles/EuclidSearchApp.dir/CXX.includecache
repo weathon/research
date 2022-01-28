@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/wg25r/CMT/src/apps/EuclidSearchMain.cpp
+/home/wg25r/research/src/apps/EuclidSearchMain.cpp
 iostream
 -
 string
@@ -20,13 +20,13 @@ thread
 chrono
 -
 EuclidianTests.h
-/home/wg25r/CMT/src/apps/EuclidianTests.h
+/home/wg25r/research/src/apps/EuclidianTests.h
 Metric.h
-/home/wg25r/CMT/src/apps/Metric.h
+/home/wg25r/research/src/apps/Metric.h
 SearchCommon.h
-/home/wg25r/CMT/src/apps/SearchCommon.h
+/home/wg25r/research/src/apps/SearchCommon.h
 
-/home/wg25r/CMT/src/apps/EuclidianTests.h
+/home/wg25r/research/src/apps/EuclidianTests.h
 iostream
 -
 random
@@ -54,23 +54,23 @@ array
 map
 -
 Misc.h
-/home/wg25r/CMT/src/apps/Misc.h
+/home/wg25r/research/src/apps/Misc.h
 Query.h
-/home/wg25r/CMT/src/apps/Query.h
+/home/wg25r/research/src/apps/Query.h
 Metric.h
-/home/wg25r/CMT/src/apps/Metric.h
+/home/wg25r/research/src/apps/Metric.h
 SearchCommon.h
-/home/wg25r/CMT/src/apps/SearchCommon.h
+/home/wg25r/research/src/apps/SearchCommon.h
 SPMTree.h
-/home/wg25r/CMT/src/apps/SPMTree.h
+/home/wg25r/research/src/apps/SPMTree.h
 CMTree.h
-/home/wg25r/CMT/src/apps/CMTree.h
+/home/wg25r/research/src/apps/CMTree.h
 BruteForceSearch.h
-/home/wg25r/CMT/src/apps/BruteForceSearch.h
+/home/wg25r/research/src/apps/BruteForceSearch.h
 TestCommon.h
-/home/wg25r/CMT/src/apps/TestCommon.h
+/home/wg25r/research/src/apps/TestCommon.h
 
-/home/wg25r/CMT/src/apps/TestCommon.h
+/home/wg25r/research/src/apps/TestCommon.h
 iostream
 -
 random
@@ -98,17 +98,17 @@ array
 map
 -
 Misc.h
-/home/wg25r/CMT/src/apps/Misc.h
+/home/wg25r/research/src/apps/Misc.h
 Query.h
-/home/wg25r/CMT/src/apps/Query.h
+/home/wg25r/research/src/apps/Query.h
 Metric.h
-/home/wg25r/CMT/src/apps/Metric.h
+/home/wg25r/research/src/apps/Metric.h
 TreeNodes.h
-/home/wg25r/CMT/src/apps/TreeNodes.h
+/home/wg25r/research/src/apps/TreeNodes.h
 CMTree.h
-/home/wg25r/CMT/src/apps/CMTree.h
+/home/wg25r/research/src/apps/CMTree.h
 BruteForceSearch.h
-/home/wg25r/CMT/src/apps/BruteForceSearch.h
+/home/wg25r/research/src/apps/BruteForceSearch.h
 
 common/Misc.h
 string

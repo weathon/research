@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/wg25r/CMT/bin/ExtractFastaApp"
-  "/home/wg25r/CMT/bin/ExtractFastaApp.pdb"
+  "/home/wg25r/research/bin/ExtractFastaApp"
+  "/home/wg25r/research/bin/ExtractFastaApp.pdb"
   "CMakeFiles/ExtractFastaApp.dir/ExtractFasta.cpp.o"
 )
 

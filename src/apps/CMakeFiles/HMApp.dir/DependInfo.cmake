@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/wg25r/CMT/src/apps/HMMain.cpp" "/home/wg25r/CMT/src/apps/CMakeFiles/HMApp.dir/HMMain.cpp.o"
+  "/home/wg25r/research/src/apps/HMMain.cpp" "/home/wg25r/research/src/apps/CMakeFiles/HMApp.dir/HMMain.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
@@ -20,7 +20,7 @@ set(CMAKE_CXX_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/wg25r/CMT/src/vendor/edlib/CMakeFiles/edlib.dir/DependInfo.cmake"
+  "/home/wg25r/research/src/vendor/edlib/CMakeFiles/edlib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

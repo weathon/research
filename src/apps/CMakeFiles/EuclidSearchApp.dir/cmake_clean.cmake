@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/wg25r/CMT/bin/EuclidSearchApp"
-  "/home/wg25r/CMT/bin/EuclidSearchApp.pdb"
+  "/home/wg25r/research/bin/EuclidSearchApp"
+  "/home/wg25r/research/bin/EuclidSearchApp.pdb"
   "CMakeFiles/EuclidSearchApp.dir/EuclidSearchMain.cpp.o"
 )
 
