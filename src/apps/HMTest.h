@@ -88,6 +88,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 			free(word);
 		}
 		free(myStr);
+		// cout<<qWords[0]<<endl;
 		cout<<qWords.size()<<endl;
 		return { words, qWords };
 }

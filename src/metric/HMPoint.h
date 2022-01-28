@@ -34,7 +34,7 @@ public:
 				ans++;
 			}
 		}
-		return ans;
+		return rand();
 	}
 
     //??? DIM = String Length?

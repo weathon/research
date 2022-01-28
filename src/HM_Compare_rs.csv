@@ -1,4 +1,14 @@
-;;TEST RADIUS: Fri Jan 28 03:51:08 2022
+;;TEST RADIUS: Fri Jan 28 17:05:18 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj50EE8HMMetricE],[8HMMetric, ]
+sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
+CMT,10,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,100,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,200,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,300,50,100,F,2,1,200,100,0,RAN,BOM,100,100,2,0,0
+CMT,400,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,500,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+;;TEST RADIUS: Fri Jan 28 17:05:21 2022
 ;;[CLasses]:
 ;;[6CMTreeI8HMPointGILj50EE8HMMetricE],[8HMMetric, ]
 sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
@@ -8,3 +18,33 @@ CMT,200,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
 CMT,300,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
 CMT,400,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
 CMT,500,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+;;TEST RADIUS: Fri Jan 28 17:06:22 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj50EE8HMMetricE],[8HMMetric, ]
+sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
+CMT,10,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,100,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,200,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,300,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,400,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,500,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+;;TEST RADIUS: Fri Jan 28 17:06:43 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj50EE8HMMetricE],[8HMMetric, ]
+sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
+CMT,10,50,100,F,2,1,200,100,0,RAN,BOM,100,100,2,0,0
+CMT,100,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,200,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,300,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,400,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+CMT,500,50,100,F,2,1,200,100,0,RAN,BOM,100,100,1,0,0
+;;TEST RADIUS: Fri Jan 28 17:09:37 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj50EE8HMMetricE],[8HMMetric, ]
+sname,MADI,dim,dbSize,collection, nQueries,radius,nfound,aveNfound,radiusSum,Pivot,Partition,NNodesVistd,NDistCalls,btime,stime,stime_n1000
+CMT,10,50,100,F,2,1,0,0,9.13737e+10,RAN,BOM,6,3,1,0,0
+CMT,100,50,100,F,2,1,0,0,8.17988e+10,RAN,BOM,9,4,1,0,0
+CMT,200,50,100,F,2,1,0,0,8.50309e+10,RAN,BOM,9,4.5,1,0,0
+CMT,300,50,100,F,2,1,0,0,8.02119e+10,RAN,BOM,4,2.5,1,0,0
+CMT,400,50,100,F,2,1,0,0,8.44964e+10,RAN,BOM,7,3.5,2,0,0
+CMT,500,50,100,F,2,1,0,0,8.64256e+10,RAN,BOM,5,3,1,0,0
