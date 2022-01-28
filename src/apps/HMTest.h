@@ -65,7 +65,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 
 		}
 		// int notInSet = nPoints; //rand()%(nPoints/50); // not 10 ()  not 10* xkoukun
-		int notInSet = nQueries; //rand()%(nPoints/50); // not 10 ()  not 10* xkoukun
+		int notInSet = rand()%(nPoints/50); // not 10 ()  not 10* xkoukun
 		cout<<"-----------"<<endl;
 		for(int i=0; i<nQueries-notInSet; i++)
 		{
@@ -98,7 +98,7 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 	//Set the DB sizes and number of queries that we want to test
 	//std::map<unsigned int, unsigned int> nofPoints = getTestSizes(2, 10,18,1, 10000) ;
 	//std::map<unsigned int, unsigned int> nofPoints{ {1000,100}, {10000,1000 } ,{100000,1000 } ,{1000000,1000 } };
-	std::map<unsigned int, unsigned int> nofPoints{  {100,2 }  };
+	std::map<unsigned int, unsigned int> nofPoints{  {10000,200 }  };
 	int dim = DIM;
 	//std::vector<float> radii {0.5f, 1.0f, 1.5f, 2.0f, 2.5f, 3.0f};
 	std::vector<float> radii {1.0f};//, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0};

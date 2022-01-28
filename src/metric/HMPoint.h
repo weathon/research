@@ -29,12 +29,13 @@ public:
 		int ans = 0;
 		for(int i=0; i<p.point.length(); i++)
 		{
-			if(p.point[i] != p.point[i])
+			// if(p.point[i] != p.point[i])
+			if(p.point[i] != point[i])
 			{
 				ans++;
 			}
 		}
-		return rand();
+		return ans;
 	}
 
     //??? DIM = String Length?
