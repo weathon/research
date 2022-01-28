@@ -596,7 +596,8 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	auto start = std::clock();
 	//SPMTree<EuclidianPoint, MetricType> stree(points, met);
 	CMTree<EuclidianPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
-	BruteForceSearch<EuclidianPoint, MetricType> stree2(points, met);
+	// BruteForceSearch<EuclidianPoint, MetricType> stree2(points, met);
+	CMTree<EuclidianPoint, MetricType> stree2(points, met,pivT, partT);
 	bTime = dTimeSeconds(start);
 	cout << "radiusSearchTest btime=" << bTime << endl;
 
@@ -668,11 +669,12 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 		<< ";;[" << typeid(stree2).name() << "]" << endl
 		<< ";; Tree depths, min depth, max depth :" << depths.size() << ","
 		<< *(std::min_element(depths.begin(), depths.end())) << "," << *(std::max_element(depths.begin(), depths.end())) << endl
-		<< "dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime" << endl
+		<< "dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime" << endl
 		<< points.size() << "," << diffCount << "," << nqActual << "," << nFound << "," << radiusSum << ","
 		<< stree.getPivotType() << "," << stree.getPartType() << ","
 		<< (stree.getPerfStats().getNodesVisited() / nQueries) << ","
 		<< (stree.getPerfStats().getDistanceCalls() / nQueries) << ","
+		<< (stree2.getPerfStats().getDistanceCalls() / nQueries) << ","
 		<< bTime << "," << sTime << endl;
 
 	theFileA.close();

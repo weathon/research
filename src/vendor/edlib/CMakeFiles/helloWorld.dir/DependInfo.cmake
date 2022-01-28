@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/home/wg25r/research/src/vendor/edlib/apps/hello-world/helloWorld.c" "/home/wg25r/research/src/vendor/edlib/CMakeFiles/helloWorld.dir/apps/hello-world/helloWorld.c.o"
+  "/home/wg25r/CMT/src/vendor/edlib/apps/hello-world/helloWorld.c" "/home/wg25r/CMT/src/vendor/edlib/CMakeFiles/helloWorld.dir/apps/hello-world/helloWorld.c.o"
   )
 set(CMAKE_C_COMPILER_ID "GNU")
 
@@ -15,7 +15,7 @@ set(CMAKE_C_TARGET_INCLUDE_PATH
 
 # Targets to which this target links.
 set(CMAKE_TARGET_LINKED_INFO_FILES
-  "/home/wg25r/research/src/vendor/edlib/CMakeFiles/edlib.dir/DependInfo.cmake"
+  "/home/wg25r/CMT/src/vendor/edlib/CMakeFiles/edlib.dir/DependInfo.cmake"
   )
 
 # Fortran module output directory.

@@ -26,7 +26,7 @@
 // #include <random>
 #include <stdlib.h> 
 #include <time.h>
-#define DIM 500
+#define DIM 50
 
 void HelloWorld()
 {
@@ -133,7 +133,7 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 //@@@@
 
 void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, PivotType pivT, PartType partT, 
-		const std::string& fileNamePrefix) {
+		const std::string& fileNamePrefix, float rad) {
 	using namespace std;
 	unsigned int bTime, sTime;
 	using MetricType = HMMetric;
@@ -144,8 +144,8 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 	auto start = std::clock();
 	CMTree<HMPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
-	BruteForceSearch<HMPoint, MetricType> stree2(points, met); //This is not baseline
-	// SPMTree<HMPoint, MetricType> stree2(points, met); //This is not baseline
+	// BruteForceSearch<HMPoint, MetricType> stree2(points, met); //This is not baseline weism huilaile xiamian de zhixian shi stree not 2
+	SPMTree<HMPoint, MetricType> stree2(points, met, pivT, partT);  //Is that because I didn't put in enough arguments?
 	bTime = dTimeSeconds(start);
 	cout << "radiusSearchTest btime=" << bTime << endl;
 
@@ -155,8 +155,8 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	start = std::clock();
 	unsigned int nFound = 0;
 	unsigned int diffCount = 0;
-	const unsigned int maxResults = 1000000;
-	auto rad = 1;
+	const unsigned int maxResults = 1000;
+	// auto rad = 1;
 	for (const auto& qp : qPoints) {
 		/*if(nqActual == 2) {
 			cout << "pq id="<<qp.getId() << endl;
@@ -190,27 +190,32 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 		<< ";;[" << typeid(stree2).name() << "]" << endl
 		<< ";; Tree depths, min depth, max depth :" << depths.size() << ","
 		<< *(std::min_element(depths.begin(), depths.end())) << "," << *(std::max_element(depths.begin(), depths.end())) << endl
-		<< "dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime" << endl
-		<< points.size() << "," << diffCount << "," << nqActual << "," << nFound << "," << radiusSum << ","
+		<< "rad,dbSize,DiffCount,nQueries,nfound,radiusSum,Pivo,Partitio,CMT<nodesVisited>, Baseline<nodesVisited>, CMT<numDistanceCalls>,Baseline<numDistanceCalls>,btime,stime" << endl
+		<< rad << "," << points.size() << "," << diffCount << "," << nqActual << "," << nFound << "," << radiusSum << ","
 		<< stree.getPivotType() << "," << stree.getPartType() << ","
 		<< (stree.getPerfStats().getNodesVisited() / nQueries) << ","
+		<< (stree2.getPerfStats().getNodesVisited() / nQueries) << "," //hui lai kan fa xian chu cuo shu le  dengdeng nQ meicuo a 
 		<< (stree.getPerfStats().getDistanceCalls() / nQueries) << ","
+		<< (stree2.getPerfStats().getDistanceCalls() / nQueries) << ","
 		<< bTime << "," << sTime << endl;
 
-	theFileA.close();
+	theFileA.close();	
 }
 
 
 
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
-	std::map<unsigned int, unsigned int> nofPoints{  {800000, 1000} };
+	std::map<unsigned int, unsigned int> nofPoints{  {10000, 1000} };
+	std::vector<float> rads{0.3}; //0.1 will cause float error
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		for (const auto& [pivType, pivVal] : pivotTypeMap) {
 			for (const auto& [parType, parVal] : partTypeMap) {
-				///cout << np << " " << pivType << " " << pivVal << endl; break;
-				radiusSearchCompareEM(np, nSkip, pivType, parType, fileNamePrefix);
+				for (float rad : rads) {
+					///cout << np << " " << pivType << " " << pivVal << endl; break;
+					radiusSearchCompareEM(np, nSkip, pivType, parType, fileNamePrefix, rad);
+				}
 			}
 		}
 	}

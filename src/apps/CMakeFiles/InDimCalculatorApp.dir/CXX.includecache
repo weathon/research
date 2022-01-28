@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/wg25r/research/src/apps/GPCharacters.hpp
+/home/wg25r/CMT/src/apps/GPCharacters.hpp
 random
 -
 string
@@ -14,7 +14,7 @@ string
 algorithm
 -
 
-/home/wg25r/research/src/apps/InDimCalculator.cpp
+/home/wg25r/CMT/src/apps/InDimCalculator.cpp
 iostream
 -
 string
@@ -28,17 +28,17 @@ thread
 chrono
 -
 Misc.h
-/home/wg25r/research/src/apps/Misc.h
+/home/wg25r/CMT/src/apps/Misc.h
 Metric.h
-/home/wg25r/research/src/apps/Metric.h
+/home/wg25r/CMT/src/apps/Metric.h
 SearchCommon.h
-/home/wg25r/research/src/apps/SearchCommon.h
+/home/wg25r/CMT/src/apps/SearchCommon.h
 Reader.h
-/home/wg25r/research/src/apps/Reader.h
+/home/wg25r/CMT/src/apps/Reader.h
 GPCharacters.hpp
-/home/wg25r/research/src/apps/GPCharacters.hpp
+/home/wg25r/CMT/src/apps/GPCharacters.hpp
 
-/home/wg25r/research/src/apps/Reader.h
+/home/wg25r/CMT/src/apps/Reader.h
 iostream
 -
 fstream
@@ -52,9 +52,9 @@ filesystem
 regex
 -
 Sequence.h
-/home/wg25r/research/src/apps/Sequence.h
+/home/wg25r/CMT/src/apps/Sequence.h
 Misc.h
-/home/wg25r/research/src/apps/Misc.h
+/home/wg25r/CMT/src/apps/Misc.h
 
 common/Misc.h
 string

@@ -49,9 +49,8 @@ int main(int argc, char* argv[]) {
 
 	//COMPARE AWNSERS FOR CORRECTNESS TESTS:
 	//kNNCompareEDM(fileNamePrefix + "_knncmp", dictionFileName, 100000, 100, 10 , PivotType::RAN, PartType::BOM, true);
-
 	//KNN search with initial radius
-	nkSearchTestEDM_EXQ(fileNamePrefix + "_spro_rknn" , sprotFileName);
+	// nkSearchTestEDM_EXQ(fileNamePrefix + "_spro_rknn" , sprotFileName);
 
 	//nkIncreasingDensityTestEM(100000, 10000, PivotType::RAN, PartType::PIV, 5, fileNamePrefix + "_id");
 	//nkIncreasingDensityTestEM(fileNamePrefix + "_id");

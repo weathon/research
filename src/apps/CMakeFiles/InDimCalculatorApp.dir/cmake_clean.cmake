@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/wg25r/research/bin/InDimCalculatorApp"
-  "/home/wg25r/research/bin/InDimCalculatorApp.pdb"
+  "/home/wg25r/CMT/bin/InDimCalculatorApp"
+  "/home/wg25r/CMT/bin/InDimCalculatorApp.pdb"
   "CMakeFiles/InDimCalculatorApp.dir/InDimCalculator.cpp.o"
 )
 

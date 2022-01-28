@@ -35,6 +35,7 @@ public:
 				ans++;
 			}
 		}
+		// std::cout<<ans<<std::endl; //Nost of them are about 400 while the dim is 50 it is 500 on th otehr side tt huangxkou 
 		return ans;
 	}
 
@@ -61,7 +62,7 @@ public:
 // static const unsigned int EuclidianPointDim = 10;
 
 // using EuclidianPointPointType = float;
-using HMPoint = HMPointG<500>;
+using HMPoint = HMPointG<50>;
 
 
 // #endif // !EUCLIDIAN_POINT_H

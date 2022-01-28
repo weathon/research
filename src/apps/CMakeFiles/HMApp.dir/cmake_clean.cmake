@@ -1,6 +1,6 @@
 file(REMOVE_RECURSE
-  "/home/wg25r/research/bin/HMApp"
-  "/home/wg25r/research/bin/HMApp.pdb"
+  "/home/wg25r/CMT/bin/HMApp"
+  "/home/wg25r/CMT/bin/HMApp.pdb"
   "CMakeFiles/HMApp.dir/HMMain.cpp.o"
 )
 

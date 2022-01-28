@@ -21,7 +21,9 @@ int main(int argc, char* argv[]) {
 
 	/*  EUCLIDIAN METRIC TESTS */
 	
-	radiusSearchTestEM(fileNamePrefix);
+	// radiusSearchTestEM(fileNamePrefix);
+radiusSearchCompareEM(1000, 10, PivotType::RAN, PartType::BOM, "EuD");
+
 	//radiusSearchTestEM_S(fileNamePrefix);
 
 	//the count-only version of radius search
