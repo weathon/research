@@ -26,7 +26,7 @@
 // #include <random>
 #include <stdlib.h> 
 #include <time.h>
-#define DIM 50
+#define DIM 500
 
 void HelloWorld()
 {
@@ -156,7 +156,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	unsigned int nFound = 0;
 	unsigned int diffCount = 0;
 	const unsigned int maxResults = 1000000;
-	auto rad = 1.0;
+	auto rad = 1;
 	for (const auto& qp : qPoints) {
 		/*if(nqActual == 2) {
 			cout << "pq id="<<qp.getId() << endl;
@@ -204,7 +204,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
-	std::map<unsigned int, unsigned int> nofPoints{ {100,2}};
+	std::map<unsigned int, unsigned int> nofPoints{  {100000, 1000} };
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		for (const auto& [pivType, pivVal] : pivotTypeMap) {

@@ -13,5 +13,5 @@
 
 int main(int argc, char* argv[]) {
     using namespace std;
-    radiusSearchTestEM("HM_Compare");
+    radiusSearchCompareEM("Final_HM");
 }

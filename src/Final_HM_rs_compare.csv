@@ -1,0 +1,47 @@
+
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+100,0,10,9,3020,RAN,BOM,39,25,1,0
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+1000,0,100,85,24874,RAN,BOM,230,125,23,59
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+10000,0,1000,983,287760,RAN,BOM,1243,669,360,5840
+;;TEST EMSC: Fri Jan 28 17:41:23 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj500EE8HMMetricE],[8HMMetric, ]
+;;[CLasses # 2]:
+;;[16BruteForceSearchI8HMPointGILj500EE8HMMetricE]
+;; Tree depths, min depth, max depth :1,6,6
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+100,0,10,10,29917,RAN,BOM,13,7,3,5
+;;TEST EMSC: Fri Jan 28 17:41:24 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj500EE8HMMetricE],[8HMMetric, ]
+;;[CLasses # 2]:
+;;[16BruteForceSearchI8HMPointGILj500EE8HMMetricE]
+;; Tree depths, min depth, max depth :1,9,9
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+1000,0,100,84,246478,RAN,BOM,33,17,56,489
+;;TEST EMSC: Fri Jan 28 17:42:18 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj500EE8HMMetricE],[8HMMetric, ]
+;;[CLasses # 2]:
+;;[16BruteForceSearchI8HMPointGILj500EE8HMMetricE]
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+10000,0,1000,860,2.8495e+06,RAN,BOM,71,37,893,47766
+;;TEST EMSC: Fri Jan 28 17:42:56 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj500EE8HMMetricE],[8HMMetric, ]
+;;[CLasses # 2]:
+;;[16BruteForceSearchI8HMPointGILj500EE8HMMetricE]
+;; Tree depths, min depth, max depth :1,6,6
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+100,0,10,10,29917,RAN,BOM,13,7,3,5
+;;TEST EMSC: Fri Jan 28 17:42:57 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj500EE8HMMetricE],[8HMMetric, ]
+;;[CLasses # 2]:
+;;[16BruteForceSearchI8HMPointGILj500EE8HMMetricE]
+;; Tree depths, min depth, max depth :1,9,9
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+1000,0,100,84,246478,RAN,BOM,33,17,57,473
