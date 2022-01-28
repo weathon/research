@@ -17,6 +17,7 @@ private:
 	std::string id;
 public:
 	HMPointG(const std::string ident, const std::string&  pData) : id{ ident } {
+			id = ident;
 			point= pData;//defined in std to overrite every member
 	}
 	const std::string& getId() const { return id; }

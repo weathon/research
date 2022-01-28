@@ -1,0 +1,3 @@
+
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+1000,0,100,100000,0,RAN,BOM,1000,1000,35,403

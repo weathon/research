@@ -27,8 +27,6 @@ HMTest.h
 /home/wg25r/CMT/src/apps/HMTest.h
 iostream
 -
-random
--
 cmath
 -
 string
@@ -71,6 +69,10 @@ BruteForceSearch.h
 /home/wg25r/CMT/src/apps/BruteForceSearch.h
 TestCommon.h
 /home/wg25r/CMT/src/apps/TestCommon.h
+stdlib.h
+-
+time.h
+-
 
 /home/wg25r/CMT/src/apps/TestCommon.h
 iostream

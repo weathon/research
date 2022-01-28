@@ -1,0 +1,8 @@
+;;TEST EMSC: Fri Jan 28 02:38:06 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj50EE8HMMetricE],[8HMMetric, ]
+;;[CLasses # 2]:
+;;[16BruteForceSearchI8HMPointGILj50EE8HMMetricE]
+;; Tree depths, min depth, max depth :1,6,6
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,btime,stime
+100,0,10,1000,0,RAN,BOM,100,100,2,3

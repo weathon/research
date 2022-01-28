@@ -16,7 +16,7 @@ unsigned int DistanceIntervalSM<float>::used = 0;
 std::vector<DistanceIntervalSM<float>> DistanceIntervalSM<float>::data;
 #endif
 
-string bfn{"/home/mzuniga/data"};
+string bfn{"/home/wg25r/data"};
 string sprotFileName{bfn + "/UniProt/uniprot_sprot.fasta"};
 string tremblFileName{bfn + "/UniProt/TREMBL/uniprot_trembl_500000.fasta"};
 string uproMammalsFileName{bfn + "/UniProt/TREMBL/mammals/uniprot_trembl_mammals_500000.fasta"};
