@@ -608,7 +608,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	unsigned int nFound = 0;
 	unsigned int diffCount = 0;
 	const unsigned int maxResults = 1000000;
-	auto rad = 0.0;
+	auto rad = 1.0;
 	for (const auto& qp : qPoints) {
 		/*if(nqActual == 2) {
 			cout << "pq id="<<qp.getId() << endl;

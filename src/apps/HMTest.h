@@ -26,7 +26,8 @@
 // #include <random>
 #include <stdlib.h> 
 #include <time.h>
-#define DIM 50
+#define DIM 100
+#define lessDifference false
 
 void HelloWorld()
 {
@@ -49,29 +50,52 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		// 65-90
 
 		char *myStr = (char*)malloc(dim * sizeof(char)); // For somereason, use array will cause additional char at the end
-		for(int i=0; i<nPoints; i++)
+		for(int j=0; j<dim; j++)
 		{
-			for(int j=0; j<dim; j++)
+			myStr[j] = rand()%(90-65)+65;
+			// cout<<myStr[j]<<endl;
+		}
+		string s = myStr;
+		HMPoint* word = new HMPoint(s, s);
+		words.push_back(*word);
+		free(word);
+		for(int i=1; i<nPoints; i++)
+		{
+			if(lessDifference)
+			// string lastString = qWords[i-1].getValue(); //shunxu xkou 
 			{
-				myStr[j] = rand()%(90-65)+65;
-				// cout<<myStr[j]<<endl;
+				string lastString = words[i-1].getValue(); //shunxu xkou 
+				lastString[rand()%DIM]=rand()%(90-65)+65;
+				// cout<<lastString<<endl;
+				// qWords.push_back(lastString); 
+				// HMPoint* word = new HMPoint(lastString, lastString);
+				HMPoint* word = new HMPoint(lastString, lastString);
+				words.push_back(*word);
+				free(word);
 			}
-			string s = myStr;
-			// cout<<s<<endl;
-			// string s = "aaaaaa";
-			HMPoint* word = new HMPoint(s, s);
-			words.push_back(*word);
-			free(word);
+			else
+			{
+				for(int j=0; j<dim; j++)
+				{
+					myStr[j] = rand()%(90-65)+65;
+				}
+				string s = myStr;
+				// string s = "aaaaaa";
+				// cout<<s<<endl;
+				HMPoint* word = new HMPoint(s, s);
+				words.push_back(*word);
+				free(word);
+			}
 
 		}
+
 		// int notInSet = nPoints; //rand()%(nPoints/50); // not 10 ()  not 10* xkoukun
-		int notInSet = rand()%(nQueries/50); // not 10 ()  not 10* xkoukun
+		int notInSet = 0;rand()%(nQueries/50); // not 10 ()  not 10* xkoukun
 		cout<<"-----------"<<endl;
+		// qWords.push_back(words[rand()%nPoints]);
 		for(int i=0; i<nQueries-notInSet; i++)
 		{
-			// words.push_back(words[rand()%nPoints]);
-			qWords.push_back(words[rand()%nPoints]); // this should qwords why not before? guaibudehenduoreeixnyuneyuneixnkunsuan chubuliaoexinku yun kun zhongyuzhidao le ijiranshi qword why use nquaera meiyou shi nQ
-			// qWords.push_back(words[rand()%nPoints]);
+			qWords.push_back(words[rand()%nPoints]);
 		}
 		cout<<"notInSet: "<<notInSet<<endl;
 		for(int i=0; i<notInSet; i++)
@@ -98,7 +122,7 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 	//Set the DB sizes and number of queries that we want to test
 	//std::map<unsigned int, unsigned int> nofPoints = getTestSizes(2, 10,18,1, 10000) ;
 	//std::map<unsigned int, unsigned int> nofPoints{ {1000,100}, {10000,1000 } ,{100000,1000 } ,{1000000,1000 } };
-	std::map<unsigned int, unsigned int> nofPoints{  {10000,200 }  };
+	std::map<unsigned int, unsigned int> nofPoints{  {1000000,1000}  };
 	int dim = DIM;
 	//std::vector<float> radii {0.5f, 1.0f, 1.5f, 2.0f, 2.5f, 3.0f};
 	std::vector<float> radii {1.0f};//, 2.0, 3.0, 4.0, 5.0, 6.0, 7.0, 8.0, 9.0, 10.0, 11.0};
@@ -133,14 +157,14 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 //@@@@
 
 void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, PivotType pivT, PartType partT, 
-		const std::string& fileNamePrefix, float rad) {
+		const std::string& fileNamePrefix, float rad,  std::vector<HMPoint> points, std::vector<HMPoint> qPoints) {
 	using namespace std;
 	unsigned int bTime, sTime;
 	using MetricType = HMMetric;
 	MetricType met;
 	unsigned int nqActual = 0;
 
-	auto [points, qPoints] = generatePointsQD(nPoints, nQueries);
+	// auto [points, qPoints] = generatePointsQD(nPoints, nQueries);
 
 	auto start = std::clock();
 	CMTree<HMPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
@@ -155,7 +179,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	start = std::clock();
 	unsigned int nFound = 0;
 	unsigned int diffCount = 0;
-	const unsigned int maxResults = 1000;
+	const unsigned int maxResults = 100000;
 	// auto rad = 1;
 	for (const auto& qp : qPoints) {
 		/*if(nqActual == 2) {
@@ -183,14 +207,15 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 	string runTimeFileName{ fileNamePrefix + "_rs_compare.csv"};
 	ofstream theFileA(runTimeFileName, ios::app);
-	theFileA << ";;TEST EMSC: " << currentDateTime()
-		<< ";;[CLasses]:" << endl
-		<< ";;[" << typeid(stree).name() << "]," << "[" << met << "]" << endl
-		<< ";;[CLasses # 2]:" << endl
-		<< ";;[" << typeid(stree2).name() << "]" << endl
-		<< ";; Tree depths, min depth, max depth :" << depths.size() << ","
-		<< *(std::min_element(depths.begin(), depths.end())) << "," << *(std::max_element(depths.begin(), depths.end())) << endl
-		<< "rad,dbSize,DiffCount,nQueries,nfound,radiusSum,Pivo,Partitio,CMT<nodesVisited>, Baseline<nodesVisited>, CMT<numDistanceCalls>,Baseline<numDistanceCalls>,btime,stime" << endl
+	theFileA 
+		// << ";;TEST EMSC: " << currentDateTime()
+		// << ";;[CLasses]:" << endl
+		// << ";;[" << typeid(stree).name() << "]," << "[" << met << "]" << endl
+		// << ";;[CLasses # 2]:" << endl
+		// << ";;[" << typeid(stree2).name() << "]" << endl
+		// << ";; Tree depths, min depth, max depth :" << depths.size() << ","
+		// << *(std::min_element(depths.begin(), depths.end())) << "," << *(std::max_element(depths.begin(), depths.end())) << endl
+		// << "rad,dbSize,DiffCount,nQueries,nfound,radiusSum,Pivo,Partitio,CMT<nodesVisited>, Baseline<nodesVisited>, CMT<numDistanceCalls>,Baseline<numDistanceCalls>,btime,stime" << endl
 		<< rad << "," << points.size() << "," << diffCount << "," << nqActual << "," << nFound << "," << radiusSum << ","
 		<< stree.getPivotType() << "," << stree.getPartType() << ","
 		<< (stree.getPerfStats().getNodesVisited() / nQueries) << ","
@@ -206,15 +231,19 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
-	std::map<unsigned int, unsigned int> nofPoints{  {10000, 1000} };
-	std::vector<float> rads{0.3}; //0.1 will cause float error
+	std::map<unsigned int, unsigned int> nofPoints{  {20000, 3000} };
+	std::vector<float> rads{35,36,37,38,39,40,41,42,43,44,45,46,47,48,49}; //0.1 will cause float error
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
+		auto [points, qPoints] = generatePointsQD(np, nSkip);
+
 		for (const auto& [pivType, pivVal] : pivotTypeMap) {
 			for (const auto& [parType, parVal] : partTypeMap) {
 				for (float rad : rads) {
 					///cout << np << " " << pivType << " " << pivVal << endl; break;
-					radiusSearchCompareEM(np, nSkip, pivType, parType, fileNamePrefix, rad);
+					// radiusSearchCompareEM(np, nSkip, pivType, parType, fileNamePrefix, rad, nPoints, nQueries);
+					radiusSearchCompareEM(np, nSkip, pivType, parType, fileNamePrefix, rad, points, qPoints);
+
 				}
 			}
 		}

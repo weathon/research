@@ -30,3 +30,19 @@ dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDista
 ;; Tree depths, min depth, max depth :1,9,9
 dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
 1000,0,10,7,729.112,RAN,BOM,13,7,7,107,0
+;;TEST EMSC: Fri Jan 28 23:29:59 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE]
+;; Tree depths, min depth, max depth :1,9,9
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+1000,0,10,7,729.112,RAN,BOM,13,7,7,110,0
+;;TEST EMSC: Fri Jan 28 23:31:18 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE]
+;; Tree depths, min depth, max depth :1,9,9
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+1000,0,10,7,729.112,RAN,BOM,13,7,7,106,0
