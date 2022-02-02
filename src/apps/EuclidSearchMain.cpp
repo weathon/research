@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 	/*  EUCLIDIAN METRIC TESTS */
 	
 	// radiusSearchTestEM(fileNamePrefix);
-radiusSearchCompareEM(1000, 10, PivotType::RAN, PartType::BOM, "EuD");
+radiusSearchCompareEM("EuD");
 
 	//radiusSearchTestEM_S(fileNamePrefix);
 

@@ -169,7 +169,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	auto start = std::clock();
 	CMTree<HMPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
 	// BruteForceSearch<HMPoint, MetricType> stree2(points, met); //This is not baseline weism huilaile xiamian de zhixian shi stree not 2
-	SPMTree<HMPoint, MetricType> stree2(points, met, pivT, partT);  //Is that because I didn't put in enough arguments?
+	// SPMTree<HMPoint, MetricType> stree2(points, met, pivT, partT);  //Is that because I didn't put in enough arguments?
 	bTime = dTimeSeconds(start);
 	cout << "radiusSearchTest btime=" << bTime << endl;
 
@@ -192,14 +192,14 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 		// cout<<stree.getPerfStats().getNodesVisited()<<endl;
 		nFound += rq.getNeighbors().size();
 
-		RadiusQuery<HMPoint> rq2(qp, rad, maxResults);
-		stree2.search(rq2);
-		// cout<<stree2.getPerfStats().getNodesVisited()<<endl;
-		// cout<<"----"<<endl;
-		if (!rq.hasSameNeighbors(rq2)) {
-			diffCount++;
+		// RadiusQuery<HMPoint> rq2(qp, rad, maxResults);
+		// stree2.search(rq2);
+		// // cout<<stree2.getPerfStats().getNodesVisited()<<endl;
+		// // cout<<"----"<<endl;
+		// if (!rq.hasSameNeighbors(rq2)) {
+		// 	diffCount++;
 			
-		}
+		// }
 
 	    nqActual++;
 		if ((nqActual % 10000) == 0) { cout << "finished search i= " << nQueries << endl; }
@@ -220,9 +220,9 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 		<< rad << "," << points.size() << "," << diffCount << "," << nqActual << "," << nFound << "," << radiusSum << ","
 		<< stree.getPivotType() << "," << stree.getPartType() << ","
 		<< (stree.getPerfStats().getNodesVisited() / nQueries) << ","
-		<< (stree2.getPerfStats().getNodesVisited() / nQueries) << "," //hui lai kan fa xian chu cuo shu le  dengdeng nQ meicuo a 
+		// << (stree2.getPerfStats().getNodesVisited() / nQueries) << "," //hui lai kan fa xian chu cuo shu le  dengdeng nQ meicuo a 
 		<< (stree.getPerfStats().getDistanceCalls() / nQueries) << ","
-		<< (stree2.getPerfStats().getDistanceCalls() / nQueries) << ","
+		// << (stree2.getPerfStats().getDistanceCalls() / nQueries) << ","
 		<< bTime << "," << sTime << endl;
 
 	theFileA.close();	

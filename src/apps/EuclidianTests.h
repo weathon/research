@@ -595,9 +595,9 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 	auto start = std::clock();
 	//SPMTree<EuclidianPoint, MetricType> stree(points, met);
-	CMTree<EuclidianPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
+	CMTree<EuclidianPoint, MetricType> stree2(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
 	// BruteForceSearch<EuclidianPoint, MetricType> stree2(points, met);
-	CMTree<EuclidianPoint, MetricType> stree2(points, met,pivT, partT);
+	SPMTree<EuclidianPoint, MetricType> stree(points, met,pivT, partT);
 	bTime = dTimeSeconds(start);
 	cout << "radiusSearchTest btime=" << bTime << endl;
 
@@ -607,7 +607,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	start = std::clock();
 	unsigned int nFound = 0;
 	unsigned int diffCount = 0;
-	const unsigned int maxResults = 1000000;
+	const unsigned int maxResults = 100000000;
 	auto rad = 1.0;
 	for (const auto& qp : qPoints) {
 		/*if(nqActual == 2) {
@@ -625,34 +625,6 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 		if (!rq.hasSameNeighbors(rq2)) {
 			diffCount++;
-			/*
-			auto missingIn1 = rq.missingNeighbors(rq2);
-			auto missingIn2 = rq2.missingNeighbors(rq);
-			std::cout << "id=" << rq.getTarget() << std::endl;
-			std::cout << "missingIn1" << std::endl;
-			for (const auto& n : missingIn1) {
-				std::cout << "d =" << n.distance << " id=" << n.id << std::endl;
-			}
-			std::cout << "missingIn2" << std::endl;
-			for (const auto& n : missingIn2) {
-				std::cout << "d =" << n.distance << " id=" << n.id << std::endl;
-			}
-			
-			std::cout << "---listing nbrs---:" << std::endl;
-			auto nba = rq.getNeigbors();
-			auto nbb = rq2.getNeigbors();
-			for (const auto& n : nba) {
-				std::cout << "d =" << n.distance << " id=" << n.id << std::endl;
-			}
-			for (const auto& n : nbb) {
-				std::cout << "bd=" << n.distance << " id=" << n.id << std::endl;
-			}
-			
-			
-			std::cout << "-----" << std::endl;
-			int i;
-			std::cin >> i;
-			*/
 		}
 
 	    nqActual++;
@@ -666,7 +638,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 		<< ";;[CLasses]:" << endl
 		<< ";;[" << typeid(stree).name() << "]," << "[" << met << "]" << endl
 		<< ";;[CLasses # 2]:" << endl
-		<< ";;[" << typeid(stree2).name() << "]" << endl
+		// << ";;[" << typeid(stree2).name() << "]" << endl
 		<< ";; Tree depths, min depth, max depth :" << depths.size() << ","
 		<< *(std::min_element(depths.begin(), depths.end())) << "," << *(std::max_element(depths.begin(), depths.end())) << endl
 		<< "dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime" << endl
@@ -746,7 +718,7 @@ void kNNSearchCompareEM(unsigned int nPoints, unsigned int nQueries,
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
 	//std::map<unsigned int, unsigned int> nofPoints{ {100,1},{1000,10}, {10000,10}, {1000000,100} };
-	std::map<unsigned int, unsigned int> nofPoints{ {100000,10} };
+	std::map<unsigned int, unsigned int> nofPoints{ {100000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		for (const auto& [pivType, pivVal] : pivotTypeMap) {
 			for (const auto& [parType, parVal] : partTypeMap) {

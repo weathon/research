@@ -46,3 +46,60 @@ dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDista
 ;; Tree depths, min depth, max depth :1,9,9
 dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
 1000,0,10,7,729.112,RAN,BOM,13,7,7,106,0
+;;TEST EMSC: Wed Feb  2 20:11:09 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE]
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+10000,0,10,12433,8763.62,RAN,BOM,9636,9180,9180,1606,871
+;;TEST EMSC: Wed Feb  2 20:21:40 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+10000,0,10,12433,8763.62,RAN,BOM,9636,9180,332,105
+;;TEST EMSC: Wed Feb  2 20:22:16 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+10000,0,10,12433,8763.62,RAN,BOM,9636,9180,344,95
+;;TEST EMSC: Wed Feb  2 20:23:08 2022
+;;[CLasses]:
+;;[7SPMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+10000,0,10,12433,5797.78,RAN,BOM,9841,9841,168,47
+;;TEST EMSC: Wed Feb  2 20:31:54 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+10000,0,10,12433,8763.62,RAN,BOM,9636,472,81
+;;TEST EMSC: Wed Feb  2 20:32:45 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+10000,0,10,12433,8763.62,RAN,BOM,9636,9180,459,82
+;;TEST EMSC: Wed Feb  2 20:34:11 2022
+;;[CLasses]:
+;;[7SPMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;; Tree depths, min depth, max depth :2,12,13
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+10000,0,10,12433,5797.78,RAN,BOM,9841,9841,299,44
+;;TEST EMSC: Wed Feb  2 20:52:02 2022
+;;[CLasses]:
+;;[7SPMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+;;[CLasses # 2]:
+;; Tree depths, min depth, max depth :1,16,16
+dbSize,DiffCount,nQueries,nfound,radiusSu,Pivo,Partitio,<nodesVisited>,<numDistanceCalls>,BaseLine<numDistanceCalls>,btime,stime
+100000,0,100,1422337,50445.1,RAN,BOM,94999,94999,86345,6500,21321

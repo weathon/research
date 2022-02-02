@@ -29,7 +29,7 @@ public:
 		for (int i = 0; i < DIM; i++) {
 			sum += (point[i] - p.point[i]) * (point[i] - p.point[i]);
 		}
-		std::cout<<std::sqrt(sum)<<std::endl;
+		// std::cout<<std::sqrt(sum)<<std::endl;
 		return std::sqrt(sum);
 	}
 	bool isInsideBox(std::array<PT, DIM> const& o, std::array<PT, DIM>  const& p) {
