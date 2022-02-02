@@ -52,7 +52,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		char *myStr = (char*)malloc(dim * sizeof(char)); // For somereason, use array will cause additional char at the end
 		for(int j=0; j<dim; j++)
 		{
-			myStr[j] = rand()%(90-65)+65;
+			myStr[j] = rand()%(2)+65;
 			// cout<<myStr[j]<<endl;
 		}
 		string s = myStr;
@@ -65,7 +65,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 			// string lastString = qWords[i-1].getValue(); //shunxu xkou 
 			{
 				string lastString = words[i-1].getValue(); //shunxu xkou 
-				lastString[rand()%DIM]=rand()%(90-65)+65;
+				lastString[rand()%DIM]=rand()%(2)+65;
 				// cout<<lastString<<endl;
 				// qWords.push_back(lastString); 
 				// HMPoint* word = new HMPoint(lastString, lastString);
@@ -77,7 +77,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 			{
 				for(int j=0; j<dim; j++)
 				{
-					myStr[j] = rand()%(90-65)+65;
+					myStr[j] = rand()%2+65;
 				}
 				string s = myStr;
 				// string s = "aaaaaa";
@@ -102,7 +102,7 @@ generatePointsQD(unsigned int nPoints, unsigned int nQueries) {
 		{
 			for(int j=0; j<dim; j++)
 			{
-				myStr[j] = rand()%(90-65)+65;
+				myStr[j] = rand()%(2)+65;
 			}
 			string s = myStr;
 			// string s = "aaaaaa";
@@ -189,12 +189,13 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 		}*/
 		RadiusQuery<HMPoint> rq(qp, rad, maxResults);
 		stree.search(rq);
-	
+		// cout<<stree.getPerfStats().getNodesVisited()<<endl;
 		nFound += rq.getNeighbors().size();
 
 		RadiusQuery<HMPoint> rq2(qp, rad, maxResults);
 		stree2.search(rq2);
-
+		// cout<<stree2.getPerfStats().getNodesVisited()<<endl;
+		// cout<<"----"<<endl;
 		if (!rq.hasSameNeighbors(rq2)) {
 			diffCount++;
 			
@@ -231,8 +232,8 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
-	std::map<unsigned int, unsigned int> nofPoints{  {20000, 3000} };
-	std::vector<float> rads{35,36,37,38,39,40,41,42,43,44,45,46,47,48,49}; //0.1 will cause float error
+	std::map<unsigned int, unsigned int> nofPoints{  {1000, 20} };
+	std::vector<float> rads{1,5,10,15,20,25,30, 35,40,45,50,55,60,65,70}; //0.1 will cause float error
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		auto [points, qPoints] = generatePointsQD(np, nSkip);
