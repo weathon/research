@@ -232,8 +232,8 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
-	std::map<unsigned int, unsigned int> nofPoints{  {1000, 20} };
-	std::vector<float> rads{1,5,10,15,20,25,30, 35,40,45,50,55,60,65,70}; //0.1 will cause float error
+	std::map<unsigned int, unsigned int> nofPoints{  {2e6, 2000} };
+	std::vector<float> rads{20,21,22,23,24,25,26,27,28,29,30}; //0.1 will cause float error
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		auto [points, qPoints] = generatePointsQD(np, nSkip);

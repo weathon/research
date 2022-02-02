@@ -34,11 +34,12 @@ public:
 			// if(p.point[i] != p.point[i])
 			if(p.point[i] != point[i])
 			{
-				ans+=i*trandomVector[i];
+				ans+=1*trandomVector[i];
 				// ans+=i/101;
 			}
 		}
-		std::cout<<ans<<std::endl; //Nost of them are about 400 while the dim is 50 it is 500 on th otehr side tt huangxkou 
+		// std::cout<<ans<<std::endl; //Nost of them are about 400 while the dim is 50 it is 500 on th otehr side tt huangxkou why some is 60?  DIM=100!! ok yunzhaghuxi meiyou de hua shi 50 yuou de hua shi 25 huxi zhuag 
+
 		return ans;
 	}
 
