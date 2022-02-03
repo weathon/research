@@ -26,7 +26,7 @@
 // #include <random>
 #include <stdlib.h> 
 #include <time.h>
-#define DIM 100
+#define DIM 1000
 #define lessDifference false
 
 void HelloWorld()
@@ -157,7 +157,7 @@ void radiusSearchTestEM(const std::string& fileNamePrefix) {
 //@@@@
 
 void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, PivotType pivT, PartType partT, 
-		const std::string& fileNamePrefix, float rad,  std::vector<HMPoint> points, std::vector<HMPoint> qPoints) {
+	const std::string& fileNamePrefix, float rad,  std::vector<HMPoint> points, std::vector<HMPoint> qPoints) {
 	using namespace std;
 	unsigned int bTime, sTime;
 	using MetricType = HMMetric;
@@ -167,9 +167,9 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	// auto [points, qPoints] = generatePointsQD(nPoints, nQueries);
 
 	auto start = std::clock();
-	CMTree<HMPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
+	SPMTree<HMPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
 	// BruteForceSearch<HMPoint, MetricType> stree2(points, met); //This is not baseline weism huilaile xiamian de zhixian shi stree not 2
-	// SPMTree<HMPoint, MetricType> stree2(points, met, pivT, partT);  //Is that because I didn't put in enough arguments?
+	SPMTree<HMPoint, MetricType> stree2(points, met, pivT, partT, kxBalancedTreeHeight(1,points.size()));  //Is that because I didn't put in enough arguments?
 	bTime = dTimeSeconds(start);
 	cout << "radiusSearchTest btime=" << bTime << endl;
 
@@ -194,8 +194,8 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 		// RadiusQuery<HMPoint> rq2(qp, rad, maxResults);
 		// stree2.search(rq2);
-		// // cout<<stree2.getPerfStats().getNodesVisited()<<endl;
-		// // cout<<"----"<<endl;
+		// cout<<stree2.getPerfStats().getNodesVisited()<<endl;
+		// cout<<"----"<<endl;
 		// if (!rq.hasSameNeighbors(rq2)) {
 		// 	diffCount++;
 			
@@ -232,7 +232,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
-	std::map<unsigned int, unsigned int> nofPoints{  {2e6, 2000} };
+	std::map<unsigned int, unsigned int> nofPoints{  {2e5, 20} };
 	std::vector<float> rads{20,21,22,23,24,25,26,27,28,29,30}; //0.1 will cause float error
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
