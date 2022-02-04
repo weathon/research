@@ -22,7 +22,7 @@ int main(int argc, char* argv[]) {
 	/*  EUCLIDIAN METRIC TESTS */
 	
 	// radiusSearchTestEM(fileNamePrefix);
-radiusSearchCompareEM("EuD");
+kNNSearchCompareEM("EuD");
 
 	//radiusSearchTestEM_S(fileNamePrefix);
 

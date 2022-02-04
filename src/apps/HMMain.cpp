@@ -13,5 +13,5 @@
 
 int main(int argc, char* argv[]) {
     using namespace std;
-    radiusSearchCompareEM("Final_HM");
+    kNNSearchCompareEM("Final_HM");
 }

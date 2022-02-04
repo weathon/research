@@ -1,0 +1,60 @@
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:06:49 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,1,100,1,RAN,BOM,16.84,8.93,8.930
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:06:49 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,5,500,5,RAN,BOM,857.58,698.63,139.7260
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:06:50 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,10,1000,10,RAN,BOM,923.13,796.72,79.6720
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:06:50 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,15,1500,15,RAN,BOM,944.94,839.07,55.9380
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:11:59 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,1,100,1,RAN,BOM,16.84,8.93,8.93,0
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:11:59 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,5,500,5,RAN,BOM,857.58,698.63,139.726,0
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:11:59 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,10,1000,10,RAN,BOM,923.13,796.72,79.672,0
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:11:59 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,15,1500,15,RAN,BOM,944.94,839.07,55.938,0
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:14:01 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,1,100,1,RAN,BOM,16.84,8.93,8.93,580.43
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:14:01 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,5,500,5,RAN,BOM,857.58,698.63,139.726,191.772
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:14:02 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,10,1000,10,RAN,BOM,923.13,796.72,79.672,97.772
+;;TEST NEARK_COMPARE_EM: Thu Feb  3 15:14:02 2022
+;;[CLasses]:
+;;[6CMTreeI15EuclidianPointGIfLj10EE15EuclidianMetricE],[15EuclidianMetric, ]
+DiffCnt,name,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,nodesVisited,numDistCalls,
+0,CMT,10,10,1000,100,15,1500,15,RAN,BOM,944.94,839.07,55.938,65.696

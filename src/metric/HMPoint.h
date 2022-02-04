@@ -65,7 +65,7 @@ public:
 // static const unsigned int EuclidianPointDim = 10;
 
 // using EuclidianPointPointType = float;
-using HMPoint = HMPointG<1000>;
+using HMPoint = HMPointG<100>;//shangmianrandomcectorbugouda kunsuanduz
 
 
 // #endif // !EUCLIDIAN_POINT_H

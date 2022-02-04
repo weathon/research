@@ -26,7 +26,7 @@
 // #include <random>
 #include <stdlib.h> 
 #include <time.h>
-#define DIM 1000
+#define DIM 100
 #define lessDifference false
 
 void HelloWorld()
@@ -167,7 +167,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 	// auto [points, qPoints] = generatePointsQD(nPoints, nQueries);
 
 	auto start = std::clock();
-	SPMTree<HMPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
+	CMTree<HMPoint, MetricType> stree(points, met,pivT, partT, kxBalancedTreeHeight(1,points.size()));
 	// BruteForceSearch<HMPoint, MetricType> stree2(points, met); //This is not baseline weism huilaile xiamian de zhixian shi stree not 2
 	SPMTree<HMPoint, MetricType> stree2(points, met, pivT, partT, kxBalancedTreeHeight(1,points.size()));  //Is that because I didn't put in enough arguments?
 	bTime = dTimeSeconds(start);
@@ -233,7 +233,7 @@ void radiusSearchCompareEM(unsigned int nPoints, const unsigned int nQueries, Pi
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
 	std::map<unsigned int, unsigned int> nofPoints{  {2e5, 20} };
-	std::vector<float> rads{20,21,22,23,24,25,26,27,28,29,30}; //0.1 will cause float error
+	std::vector<float> rads{5,10,15,20}; //0.1 will cause float error
 	// std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		auto [points, qPoints] = generatePointsQD(np, nSkip);
@@ -245,6 +245,90 @@ void radiusSearchCompareEM(const std::string& fileNamePrefix) {
 					// radiusSearchCompareEM(np, nSkip, pivType, parType, fileNamePrefix, rad, nPoints, nQueries);
 					radiusSearchCompareEM(np, nSkip, pivType, parType, fileNamePrefix, rad, points, qPoints);
 
+				}
+			}
+		}
+	}
+}
+
+
+void kNNSearchCompareEM(unsigned int nPoints, unsigned int nQueries,
+	PivotType pivT, PartType partT, unsigned int nofResults,
+	const std::string& fileNamePrefix, bool csvh = true) {
+	using namespace std;
+
+	unsigned int bTime, sTime;
+	using MetricType = HMMetric;
+	MetricType met; //beifuhidesxkoukunxou xkou zhan
+
+	constexpr unsigned int dim = DIM;
+	
+	//auto [points, qPoints] = generatePointsQD(nPoints, nQueries);
+	auto [points, qPoints] = generatePointsQD(nPoints, nQueries);
+
+
+	std::clock_t start = std::clock();
+	CMTree<HMPoint, MetricType> stree(points, met, pivT, partT, kxBalancedTreeHeight(1, points.size()));
+	SPMTree<HMPoint, MetricType> stree2(points, met, pivT, partT, kxBalancedTreeHeight(1, points.size()));
+
+	bTime = dTimeSeconds(start);
+	cout << "firstkSearchTest btime=" << bTime << endl;
+
+	start = std::clock();
+	unsigned int diffCount = 0;
+	unsigned int nFound = 0;
+	unsigned int nqActual = 0;
+	// auto rad{ std::numeric_limits<float>::max() };
+	// auto rad = 200;
+	auto rad{ std::numeric_limits<float>::max() }; //rad vs max rusult? yahci hlong meiyou make zqq zhongyuchirwanlehaihuanfangxiang 
+	for ( auto& qp : qPoints) {
+		NearestKQuery<HMPoint> rq(qp,  nofResults, rad);
+		stree.search(rq);
+		nqActual++;
+		nFound += rq.getNeighbors().size();
+
+		NearestKQuery<HMPoint> rq2(qp,  nofResults, rad); //yahaiwyiweishizhli 
+		stree2.search(rq2);
+
+		if (!rq.hasSameNeighbors(rq2)) {
+			diffCount++;
+		}
+
+		if ((nqActual % 1000) == 0) { cout << "Finished search i= " << nqActual << endl; }
+	}
+	sTime = dTimeSeconds(start);
+
+	//AND the CSV file:
+	ofstream csvFile(fileNamePrefix + ".csv", ios::app);
+	if (csvh == true) {
+		csvFile << ";;TEST NEARK_COMPARE_EM: " << currentDateTime()
+			<< ";;[CLasses]:" << endl
+			<< ";;[" << typeid(stree).name() << "]," << "[" << met << "]" << endl
+			<< "DiffCnt,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,CMT.nodesVisited,Baseline.nodesVisited,CMT.numDistCalls,Baseline.numDistCalls" << endl;
+		csvh = false;
+	}
+	csvFile << diffCount << ","  << stree.getMADIorK() <<"," << dim << "," << points.size() << "," << nqActual << "," << nofResults << ","
+		<< nFound << "," << ((nFound * 1.0f) / nqActual) << ","
+		<< stree.getPivotType() << "," << stree.getPartType() << ","
+		<< (1.0f * stree.getPerfStats().getNodesVisited()) / (1.0f * nqActual) << ","
+		<< (1.0f * stree2.getPerfStats().getNodesVisited()) / (1.0f * nqActual) << ","
+		// << static_cast<float>(stree.getPerfStats().getDistanceCalls()) / nqActual << ","//zhegeshism? chaojkunyunyachiduzihuangxkou zayun 
+		<< (1.0f * stree.getPerfStats().getDistanceCalls()) / (1.0f * nFound)  << ","
+		//qqshuowogeitachongshangle ma daduanguaibude xkou zheli meiyou dong hao  shiqing qq shuokaobuzhu fhenfanyachi  xkouhenhuangxianzaideneng duzikunweismzxianzaizhemekuai tt 
+		<< (1.0f * stree2.getPerfStats().getDistanceCalls()) / (1.0f * nFound) <<  endl;
+	csvFile.close();
+}
+
+void kNNSearchCompareEM(const std::string& fileNamePrefix) {
+	//std::map<unsigned int, unsigned int> nofPoints{ {100,1},{1000,10}, {10000,10}, {1000000,100} };
+	std::map<unsigned int, unsigned int> nofPoints{ {100000,100} };
+	std::vector<unsigned int> maxResults{1,2,3,4,5,6,7,8,9,10};
+	//
+	for (const auto& [np, nQueries] : nofPoints) {
+		for (const auto& [pivType, pivVal] : pivotTypeMap) {
+			for (const auto& [parType, parVal] : partTypeMap) {
+				for (const auto& mr : maxResults) {
+					kNNSearchCompareEM(np, nQueries, pivType, parType, mr, fileNamePrefix );
 				}
 			}
 		}
