@@ -720,7 +720,7 @@ void kNNSearchCompareEM(unsigned int nPoints, unsigned int nQueries,
 
 void radiusSearchCompareEM(const std::string& fileNamePrefix) {
 	//std::map<unsigned int, unsigned int> nofPoints{ {100,1},{1000,10}, {10000,10}, {1000000,100} };
-	std::map<unsigned int, unsigned int> nofPoints{ {100000,100} };
+	std::map<unsigned int, unsigned int> nofPoints{ {100000,1000} };
 	for (const auto& [np, nSkip] : nofPoints) {
 		for (const auto& [pivType, pivVal] : pivotTypeMap) {
 			for (const auto& [parType, parVal] : partTypeMap) {

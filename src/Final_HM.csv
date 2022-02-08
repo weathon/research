@@ -322,4 +322,15 @@ DiffCnt,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,CMT
 ;;[CLasses]:
 ;;[6CMTreeI8HMPointGILj100EE8HMMetricE],[8HMMetric, ]
 DiffCnt,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,CMT.nodesVisited,Baseline.nodesVisited,CMT.numDistCalls,Baseline.numDistCalls
+
 0,14,100,10000,100,10,1000,10,RAN,BOM,9994.28,9994.27,997.561,999.427
+;;TEST NEARK_COMPARE_EM: Tue Feb  8 01:25:37 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj100EE8HMMetricE],[8HMMetric, ]
+DiffCnt,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,CMT.nodesVisited,Baseline.nodesVisited,CMT.numDistCalls,Baseline.numDistCalls
+0,17,100,100000,100,1,100,1,RAN,BOM,29.9,73554.2,15.59,73554.2
+;;TEST NEARK_COMPARE_EM: Tue Feb  8 01:27:06 2022
+;;[CLasses]:
+;;[6CMTreeI8HMPointGILj100EE8HMMetricE],[8HMMetric, ]
+DiffCnt,MADI,dim,dbSize,nQueries,maxResults,nfound,aveNfound,Pivot,Partition,CMT.nodesVisited,Baseline.nodesVisited,CMT.numDistCalls,Baseline.numDistCalls
+0,17,100,100000,100,2,200,2,RAN,BOM,97774.1,99426.5,47127.8,49713.3

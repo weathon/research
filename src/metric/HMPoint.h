@@ -18,27 +18,31 @@ private:
 	std::string point;
 	std::string id;
 public:
-	HMPointG(const std::string ident, const std::string&  pData) : id{ ident } {
+	HMPointG(const std::string ident, const std::string&  pData) 
+	: id{ ident }
+	 {
 			id = ident;
 			point= pData;//defined in std to overrite every member
 	}
-	const std::string& getId() const { return id; }
-	const std::string& getValue() { return point; }
+	std::string getId() const { return id; } //& vs no?
+	std::string getValue() const { return point; }
 	const unsigned int dim() { return DIM; }
 	char operator[](const int i) const { return point[i]; }
 
-	double distance(const HMPointG& p) const {
+	double distance(const HMPointG p) const {
 		double ans = 0;
-		for(int i=0; i<p.point.length(); i++)
+		for(int i=0; i<point.length(); i++)
 		{
 			// if(p.point[i] != p.point[i])
-			if(p.point[i] != point[i])
+			if(p.point[i] != point[i]) // how it can accesss p.point?
 			{
 				ans+=trandomVector[i];
 				// ans+=i/101;
 			}
 		}
-		// std::cout<<ans<<std::endl; //Nost of them are about 400 while the dim is 50 it is 500 on th otehr side tt huangxkou why some is 60?  DIM=100!! ok yunzhaghuxi meiyou de hua shi 50 yuou de hua shi 25 huxi zhuag 
+		std::cout<<ans<<std::endl; //Nost of them are about 400 while the dim is 50 it is 500 on th otehr side tt huangxkou why some is 60?  DIM=100!! ok yunzhaghuxi meiyou de hua shi 50 yuou de hua shi 25 huxi zhuag 
+		std::cout<<p.getValue()<<std::endl; 
+		std::cout<<point<<std::endl;
 		return ans;
 	}
 
