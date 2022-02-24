@@ -671,8 +671,8 @@ void kNNSearchCompareEM(unsigned int nPoints, unsigned int nQueries,
 
 	std::clock_t start = std::clock();
 	CMTree<EuclidianPoint, MetricType> stree(points, met, pivT, partT, kxBalancedTreeHeight(1, points.size()));
-	SPMTree<EuclidianPoint, MetricType> stree2(points, met, pivT, partT, kxBalancedTreeHeight(1, points.size()));
-	// BruteForceSearch<EuclidianPoint, MetricType> stree2(points, met);
+	//SPMTree<EuclidianPoint, MetricType> stree2(points, met, pivT, partT, kxBalancedTreeHeight(1, points.size()));
+	BruteForceSearch<EuclidianPoint, MetricType> stree2(points, met);
 
 	bTime = dTimeSeconds(start);
 	cout << "firstkSearchTest btime=" << bTime << endl;
@@ -692,6 +692,7 @@ void kNNSearchCompareEM(unsigned int nPoints, unsigned int nQueries,
 		stree2.search(rq2);
 
 		if (!rq.hasSameNeighbors(rq2)) {
+			
 			diffCount++;
 		}
 
@@ -733,8 +734,8 @@ void radiusSearchCompareEM(const std::string& fileNamePrefix) {
 
 void kNNSearchCompareEM(const std::string& fileNamePrefix) {
 	//std::map<unsigned int, unsigned int> nofPoints{ {100,1},{1000,10}, {10000,10}, {1000000,100} };
-	std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
-	std::vector<unsigned int> maxResults{ 1,5,10,15 };
+	std::map<unsigned int, unsigned int> nofPoints{ {10000,1000} };
+	std::vector<unsigned int> maxResults{ 1,10, 100,1000 };
 	//
 	for (const auto& [np, nQueries] : nofPoints) {
 		for (const auto& [pivType, pivVal] : pivotTypeMap) {

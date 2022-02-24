@@ -314,14 +314,13 @@ void kNNSearchCompareEM(unsigned int nPoints, unsigned int nQueries,
 		<< (1.0f * stree2.getPerfStats().getNodesVisited()) / (1.0f * nqActual) << ","
 		// << static_cast<float>(stree.getPerfStats().getDistanceCalls()) / nqActual << ","//zhegeshism? chaojkunyunyachiduzihuangxkou zayun 
 		<< (1.0f * stree.getPerfStats().getDistanceCalls()) / (1.0f * nFound)  << ","
-		//qqshuowogeitachongshangle ma daduanguaibude xkou zheli meiyou dong hao  shiqing qq shuokaobuzhu fhenfanyachi  xkouhenhuangxianzaideneng duzikunweismzxianzaizhemekuai tt 
 		<< (1.0f * stree2.getPerfStats().getDistanceCalls()) / (1.0f * nFound) <<  endl;
 	csvFile.close();
 }
 
 void kNNSearchCompareEM(const std::string& fileNamePrefix) {
 	//std::map<unsigned int, unsigned int> nofPoints{ {100,1},{1000,10}, {10000,10}, {1000000,100} };
-	std::map<unsigned int, unsigned int> nofPoints{ {100000,100} };
+	std::map<unsigned int, unsigned int> nofPoints{ {1000,100} };
 	std::vector<unsigned int> maxResults{1,2,3,4,5,6,7,8,9,10};
 	//
 	for (const auto& [np, nQueries] : nofPoints) {
@@ -334,3 +333,5 @@ void kNNSearchCompareEM(const std::string& fileNamePrefix) {
 		}
 	}
 }
+
+		//qqshuowogeitachongshangle ma daduanguaibude xkou zheli meiyou dong hao  shiqing qq shuokaobuzhu fhenfanyachi  xkouhenhuangxianzaideneng duzikunweismzxianzaizhemekuai tt 

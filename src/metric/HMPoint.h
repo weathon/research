@@ -33,16 +33,16 @@ public:
 		double ans = 0;
 		for(int i=0; i<point.length(); i++)
 		{
-			// if(p.point[i] != p.point[i])
-			if(p.point[i] != point[i]) // how it can accesss p.point?
+			// if(p.point[i] != p.point[i]`
+			if(p.getValue()[i] != point[i]) // how it can accesss p.point?
 			{
-				ans+=trandomVector[i];
+				ans+=1;trandomVector[i];
 				// ans+=i/101;
 			}
 		}
-		std::cout<<ans<<std::endl; //Nost of them are about 400 while the dim is 50 it is 500 on th otehr side tt huangxkou why some is 60?  DIM=100!! ok yunzhaghuxi meiyou de hua shi 50 yuou de hua shi 25 huxi zhuag 
-		std::cout<<p.getValue()<<std::endl; 
-		std::cout<<point<<std::endl;
+		//std::cout<<ans<<std::endl; //Nost of them are about 400 while the dim is 50 it is 500 on th otehr side tt huangxkou why some is 60?  DIM=100!! ok yunzhaghuxi meiyou de hua shi 50 yuou de hua shi 25 huxi zhuag 
+		// std::cout<<p.point<<std::endl; 
+		// std::cout<<point<<std::endl; //gangcaishuixugaocuole xianshi ans ranhouzuihouyigeyizhihshiyiyangde? xkoukun tongyigeyuansu xkoukun
 		return ans;
 	}
 

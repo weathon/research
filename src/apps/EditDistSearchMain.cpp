@@ -48,7 +48,7 @@ int main(int argc, char* argv[]) {
 	//nkSearchTestEDM_EXQ_NP(fileNamePrefix + "_spro_np_nk" , sprotFileName);
 
 	//COMPARE AWNSERS FOR CORRECTNESS TESTS:
-	//kNNCompareEDM(fileNamePrefix + "_knncmp", dictionFileName, 100000, 100, 10 , PivotType::RAN, PartType::BOM, true);
+	kNNCompareEDM("_knncmp", dictionFileName, 100000, 100, 10 , PivotType::RAN, PartType::BOM, true);
 	//KNN search with initial radius
 	// nkSearchTestEDM_EXQ(fileNamePrefix + "_spro_rknn" , sprotFileName);
 
